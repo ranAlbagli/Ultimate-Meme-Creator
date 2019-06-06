@@ -10,9 +10,10 @@
 .imgs-container{
     display: grid; 
     grid-template-columns: repeat(auto-fill,400px);
-    grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 25px;
     border: 1px solid red;
+
+   
 }
   
   img {

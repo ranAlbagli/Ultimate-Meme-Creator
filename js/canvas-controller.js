@@ -6,7 +6,6 @@ let ctx;
 function init() {
     var imgId = onLoadImg();
 
-
     canvas = document.querySelector('#my-canvas');
     ctx = canvas.getContext("2d");
     var img = new Image()
@@ -23,6 +22,8 @@ function onDrawText(elText) {
     ctx.font = "30px Arial";
     ctx.fillText(text, 160, 50);
 }
+<<<<<<< HEAD
+=======
 
 function downloadCanvas(elLink) {
     const data = gCanvas.toDataURL();
@@ -33,3 +34,4 @@ function downloadCanvas(elLink) {
 function increaseFontSize(){
 }
 
+>>>>>>> 38efacccc0e5b37f04f29e3dc84241c3ca12b6c2
