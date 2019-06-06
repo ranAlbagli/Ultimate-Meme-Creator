@@ -8,15 +8,18 @@ function onInit(){
 
 
 function renderImages(){
-let strHtml= '';
-
-strHtml = gImgs[0].url;
-// strHtml = gImgs[1].url;
-
-
-
-document.querySelector('img').src=strHtml;
-
-
+    var strHtml = '';
+    for (var i = 0; i < gImgs.length; i++) {
+    strHtml += '<tr>';
+    for (var j = 0; j < 3; j++) {
+        strHtml += `<td>  <img src="${gImgs[i].url}" alt=""> </td>`;
+    }
+    strHtml += '</tr>';
+}
+var elGallery = document.querySelector('.gallery');
+elGallery.innerHTML = strHtml;
 
 }
+
+
+
