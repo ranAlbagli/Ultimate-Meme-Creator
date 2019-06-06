@@ -13,7 +13,8 @@ window.onload = function () {
     canvas = document.querySelector('#my-canvas');
     ctx = canvas.getContext("2d");
     var img = document.querySelector('img');
-    ctx.drawImage(img, 10, 10, canvas.height, canvas.width);
+    ctx.drawImage(img, 0, 0, canvas.height, canvas.width);
+    
 }
 
 
