@@ -1,5 +1,7 @@
 "use strict"
 
+var gCurrImg;
+
 var gKeywords = { 'happy': 0, 'funny puk': 0 }
 
 var gImgs = [
@@ -42,4 +44,11 @@ var gMeme = {
             color: 'red'
         }
     ]
+}
+
+
+function saveImg(imgId){
+
+    saveToStorage('img',imgId)
+    window.location.href = "canvas-editor.html";
 }
