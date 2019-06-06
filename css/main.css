@@ -1,4 +1,16 @@
-img{
-    width: 50px;
-    height: 50px;
+
+.imgs-container{
+    display: grid; 
+    grid-template-columns: repeat(auto-fill,400px);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    border: 1px solid red;
 }
+  
+  img {
+    border: 1px solid red;
+    width: 100%;
+  }
+
+
+  
