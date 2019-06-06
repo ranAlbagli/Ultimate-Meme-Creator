@@ -1,25 +1,25 @@
 "use strict"
 
-function onInit(){
+function onInit() {
     renderImages();
 
-
 }
 
 
-function renderImages(){
+function renderImages() {
     var strHtml = '';
     for (var i = 0; i < gImgs.length; i++) {
-    strHtml += '<tr>';
-    for (var j = 0; j < 3; j++) {
-        strHtml += `<td>  <img src="${gImgs[i].url}" alt=""> </td>`;
+        var img=gImgs[i];
+        strHtml += `<img src="../meme-imgs/${img.id}.jpg" onclick= "onSaveImg(this)" >`;
     }
-    strHtml += '</tr>';
+    console.log(strHtml);
+    
+    var elGallery = document.querySelector('.imgs-container');
+    elGallery.innerHTML = strHtml;
 }
-var elGallery = document.querySelector('.gallery');
-elGallery.innerHTML = strHtml;
 
+
+
+function onSaveImg(elImg){
+    onSaveImg(elImg.id)
 }
-
-
-
