@@ -24,6 +24,11 @@ function onDrawText(elText) {
     ctx.fillText(text, 160, 50);
 }
 
+function downloadCanvas(elLink) {
+    const data = gCanvas.toDataURL();
+    elLink.href = data;
+
+}
 
 function increaseFontSize(){
 }
