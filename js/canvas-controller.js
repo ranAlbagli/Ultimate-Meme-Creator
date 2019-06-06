@@ -1,6 +1,7 @@
 
-let canvas
-let ctx
+let canvas;
+let ctx;
+
 
 function init() {
     var imgId = onLoadImg();
@@ -22,3 +23,8 @@ function onDrawText(elText) {
     ctx.font = "30px Arial";
     ctx.fillText(text, 160, 50);
 }
+
+
+function increaseFontSize(){
+}
+
