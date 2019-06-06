@@ -5,7 +5,6 @@ let ctx
 function init() {
     var imgId = onLoadImg();
 
-
     canvas = document.querySelector('#my-canvas');
     ctx = canvas.getContext("2d");
     var img = new Image()
