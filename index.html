@@ -14,11 +14,18 @@
 <body onload="onInit()">
     <header>
         <h1>Ultimate Meme Creator</h1>
-        <form> <input type="text" oninput="onSetFilter(this)"></form>
+        <form> <input type="text" oninput="onSetFilter(this,event)"></form>
+        <button  class="searchBtn" onclick="onSearch()">search</button>
+        <div class="search-container">
+            <ul class="key-words-list clean-list">
+                
+            </ul>
+        </div>
     </header>
-    <section class="imgs-container ">
-
+    <section class="imgs-container">
     </section>
+
+
 
 
     <script src="js/util-service.js"></script>

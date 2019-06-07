@@ -1,11 +1,10 @@
 "use strict"
 
 var gImgs;
-var gFilterBy='all' 
+var gFilterBy; 
 var gCurrImg;
 
-
-var gKeywords = { 'happy': 0, 'funny puk': 0 }
+var gKeywords = { 'happy': 0, 'funny': 0 , 'sad':0 , 'smart':0}
 
 var gImgs = [
     { id: 1, keywords: ['sad '] },
@@ -55,12 +54,20 @@ function setFilter(txt){
     gFilterBy=txt;
 }
 
-function getImgsForDisplay() {
+function getImgsForDisplay() {    
     if (!gFilterBy) return gImgs;
     var myRe = new RegExp('^'+`${gFilterBy}`, 'i');
     var filterImages= gImgs.filter(function (img){
-        return myRe.exec(...img.keywords);
+        return myRe.exec(img.keywords);
     })
     return filterImages;
 }
 
+function setNewSearchwWord(word){
+    if(!gKeywords[word]) gKeywords[word]=1;
+    else gKeywords[word]++
+}
+
+function getKeyWords(){
+    return gKeywords;
+}
