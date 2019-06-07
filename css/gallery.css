@@ -34,32 +34,4 @@
     margin-bottom: 50px;
   }
 
-     #my-canvas {
-            border: 1px solid blue;
-        }
 
-.nav-bar {
-    width: 100vw;
-    height: 50px;
-    background: black;
-}
-
-.userChoice{
- width: 100px;
- height: 100px;
-}
-
-/* helpers */
-
-.flex{
-  display: flex;
-}
-
-.align-both {
-    justify-content: center;
-    align-items: center;
-}
-
-.download{
-  margin-left: 20px;
-}

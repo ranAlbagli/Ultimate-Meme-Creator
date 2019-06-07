@@ -1,0 +1,15 @@
+
+
+
+.flex{
+  display: flex;
+}
+
+.align-both {
+    justify-content: center;
+    align-items: center;
+}
+
+.download{
+  margin-left: 20px;
+}
