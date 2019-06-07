@@ -50,12 +50,13 @@ function onSearch(){
 }
 
 function displayWords(arr){
+    console.log('here');
     
     var strHtml=''
     for (var currKey in arr) {
-        strHtml+='<li>'
         var currValue = arr[currKey];
-        strHtml+=`${currKey} </li>`
+        var wordSize=currValue*10 +'px';
+        strHtml+=`<li style="font-size:${wordSize}">${currKey} </li>`
     }
     document.querySelector('.key-words-list').innerHTML=strHtml;
     

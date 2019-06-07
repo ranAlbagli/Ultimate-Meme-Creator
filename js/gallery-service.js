@@ -4,7 +4,7 @@ var gImgs;
 var gFilterBy; 
 var gCurrImg;
 
-var gKeywords = { 'happy': 0, 'funny': 0 , 'sad':0 , 'smart':0}
+var gKeywords = { 'happy': 3, 'funny': 1 , 'sad':1 , 'smart':1}
 
 var gImgs = [
     { id: 1, keywords: ['sad '] },

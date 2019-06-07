@@ -24,3 +24,6 @@ function changeColor(color) {
    console.log(gColor);
 }
 
+function getMeme(){
+   return gMeme;
+}
