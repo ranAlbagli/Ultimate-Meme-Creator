@@ -1,8 +1,24 @@
 
+/*  Layout */
 
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+
+.main-wrapper {
+  border-right: 1px solid #e1e0e0;
+  border-left: 1px solid #e1e0e0;
+  padding: 20px;
+}
 
      #my-canvas {
-            border: 1px solid blue;
+            border: 1px solid black;
         }
 
 .nav-bar {
@@ -11,7 +27,19 @@
     background: black;
 }
 
-.userChoice{
- width: 100px;
+.download{
+  margin-left: 20px;
+}
+
+
+.control-box{
+ /* width: 100px; */
  height: 100px;
+   padding: 10px;
+   flex-direction: column;
+
+}
+
+.choice-wrapper {
+  height: 100%;
 }

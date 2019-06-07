@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Canvas</title>
     <link rel="stylesheet" href="css/canvas.css">
-        <link rel="stylesheet" href="css/helpers.css">
+    <link rel="stylesheet" href="css/helpers.css">
 
 
 </head>
@@ -20,33 +20,37 @@
         </button>
     </nav-bar>
 
-<main>
-    <section class="flex">
+    <main>
+        <section class="container main-wrapper space-between flex">
 
-        <canvas id="my-canvas" width="600" height="600">
-            Update your browser to enjoy canvas!
-        </canvas>
+            <div class="canvas">
+                <canvas id="my-canvas" width="600" height="600">
+                    Update your browser to enjoy canvas!
+                </canvas>
+            </div>
 
-
-        <div class="userChoice flex">
-
-    <input class="input" type="color" onchange="onChangeColor(this.value)" />
-            Enter some text: <input type="text" name="txt" oninput="onDrawText(this)">
-
-            <!-- <button onclick="increaseFontSize()">+</button> -->
+            <div class="control-box choice-wrapper flex">
 
 
+                Enter some text:<input type="text" name="txt" oninput="onDrawText(this)">
 
-        </div>
 
-    </section>
+                <!-- <button onclick="increaseFontSize()">+</button> -->
 
-    
-    <script src="js/util-service.js"></script>
-    <script src="js/gallery-service.js"></script>
-    <script src="js/gallery-controller.js"></script>
-    <script src="js/canvas-controller.js"></script>
-    <script src="js/canvas-service.js"></script>
+                <input class="input" type="color" onchange="onChangeColor(this.value)" />
+
+
+
+            </div>
+
+        </section>
+
+
+        <script src="js/util-service.js"></script>
+        <script src="js/gallery-service.js"></script>
+        <script src="js/gallery-controller.js"></script>
+        <script src="js/canvas-controller.js"></script>
+        <script src="js/canvas-service.js"></script>
 
 
 </body>
