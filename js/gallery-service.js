@@ -1,7 +1,7 @@
 "use strict"
 
 var gImgs;
-var gFilterBy='all' 
+var gFilterBy; 
 var gCurrImg;
 
 
@@ -65,7 +65,7 @@ function setFilter(txt){
     gFilterBy=txt;
 }
 
-function getImgsForDisplay() {
+function getImgsForDisplay() {    
     if (!gFilterBy) return gImgs;
     var myRe = new RegExp('^'+`${gFilterBy}`, 'i');
     var filterImages= gImgs.filter(function (img){
