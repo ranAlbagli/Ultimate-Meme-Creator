@@ -1,6 +1,12 @@
 'use strict'
 
-function onLoadImg(){
-   
-   return loadFromStorage('img')
+let gColor;
+
+
+
+
+
+function changeColor(color) {
+   gColor = color;
+   console.log(gColor);
 }

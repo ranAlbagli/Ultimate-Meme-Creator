@@ -32,3 +32,7 @@ function onSetFilter(elTxt) {
     renderImages();
    
 }
+
+function onChangeColor(color) {
+    changeColor(color);
+}

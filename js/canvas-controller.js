@@ -20,10 +20,11 @@ function init() {
 function onDrawText(elText) {   
     var text = elText.value;
     ctx.font = "30px Arial";
+    ctx.fillStyle = gColor;
     ctx.fillText(text, 160, 50);
+    // ctx.fillText(text, canvas.height, canvas.width);
+
 }
-<<<<<<< HEAD
-=======
 
 function downloadCanvas(elLink) {
     const data = gCanvas.toDataURL();
@@ -34,4 +35,6 @@ function downloadCanvas(elLink) {
 function increaseFontSize(){
 }
 
->>>>>>> 38efacccc0e5b37f04f29e3dc84241c3ca12b6c2
+function onLoadImg() {
+    return loadFromStorage('img')
+}

@@ -4,6 +4,7 @@ var gImgs;
 var gFilterBy='all' 
 var gCurrImg;
 
+
 var gKeywords = { 'happy': 0, 'funny puk': 0 }
 
 var gImgs = [
@@ -72,3 +73,4 @@ function getImgsForDisplay() {
     })
     return filterImages;
 }
+
