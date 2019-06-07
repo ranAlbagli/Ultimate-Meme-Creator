@@ -22,11 +22,8 @@ function onDrawText(elText) {
     ctx.font = "30px Arial";
     ctx.fillText(text, 160, 50);
 }
-<<<<<<< HEAD
-=======
 
 
 function increaseFontSize(){
 }
 
->>>>>>> 38efacccc0e5b37f04f29e3dc84241c3ca12b6c2

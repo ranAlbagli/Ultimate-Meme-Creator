@@ -7,10 +7,10 @@ var gCurrImg;
 var gKeywords = { 'happy': 0, 'funny puk': 0 }
 
 var gImgs = [
-    { id: 1, keywords: ['sad'] },
+    { id: 1, keywords: ['sad '] },
     { id: 2, keywords: ['sad'] },
     { id: 3, keywords: ['sady'] },
-    { id: 4, keywords: ['happy'] },
+    { id: 4, keywords: ['happy ran'] },
     { id: 5, keywords: ['happy'] },
     { id: 6, keywords: ['happy'] },
     { id: 7, keywords: ['happy'] },
@@ -68,7 +68,7 @@ function getImgsForDisplay() {
     if (!gFilterBy) return gImgs;
     var myRe = new RegExp('^'+`${gFilterBy}`, 'i');
     var filterImages= gImgs.filter(function (img){
-        return myRe.exec(img.keywords);
+        return myRe.exec(...img.keywords);
     })
     return filterImages;
 }
