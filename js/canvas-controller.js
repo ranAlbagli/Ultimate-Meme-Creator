@@ -18,13 +18,22 @@ function init() {
 }
 
 function onDrawText(elText) {   
+
+
     var text = elText.value;
-    ctx.font = "30px Arial";
+    ctx.font = "30px impac";
+    // ctx.font = text + '30px ' + 'Impact';
+
     ctx.fillStyle = gColor;
     ctx.fillText(text, 160, 50);
     // ctx.fillText(text, canvas.height, canvas.width);
 
+
 }
+
+
+
+
 
 function downloadCanvas(elLink) {
     const data = gCanvas.toDataURL();
@@ -38,3 +47,4 @@ function increaseFontSize(){
 function onLoadImg() {
     return loadFromStorage('img')
 }
+

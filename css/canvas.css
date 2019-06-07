@@ -2,6 +2,7 @@
 /*  Layout */
 
 * {
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -34,9 +35,10 @@
 
 .control-box{
  /* width: 100px; */
- height: 100px;
+ height: 100%;
    padding: 10px;
    flex-direction: column;
+   border: 2px solid black;
 
 }
 

@@ -18,6 +18,8 @@
         <button><a href="index.html">Gallery</a></button>
         <button class="download"> <a href="#" class="save" onclick="downloadCanvas(this)" download="">Download</a>
         </button>
+        <button class="clear" onclick="onClearCanvas()">Clear</button>
+
     </nav-bar>
 
     <main>
@@ -39,7 +41,10 @@
 
                 <input class="input" type="color" onchange="onChangeColor(this.value)" />
 
-
+<label>Font size:
+    <input type="range" class="font-size" min="10" max="50">
+</label>
+                <!-- Enter some text:<input type="text" name="txt" oninput="onDrawText(this)"> -->
 
             </div>
 
