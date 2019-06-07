@@ -4,6 +4,8 @@ let ctx;
 
 
 function init() {
+    console.log('here');
+    
     createCanvas()
 }
 
@@ -32,9 +34,8 @@ function onDrawText(elText) {
 
 
 function downloadCanvas(elLink) {
-    const data = gCanvas.toDataURL();
+    var data = canvas.toDataURL();
     elLink.href = data;
-    elLink.download = 'my-img.jpg';
 
 }
 
