@@ -2,6 +2,7 @@
 
 function onInit() {
     renderImages();
+    renderKeyWords();
 
 }
 
@@ -9,7 +10,6 @@ function onInit() {
 function renderImages() {
     
     var imgs = getImgsForDisplay();
-    // var imgs= getImages();
     var strHtml = '';
     for (var i = 0; i < imgs.length; i++) {
         var img=imgs[i];
@@ -18,6 +18,11 @@ function renderImages() {
     }    
     var elGallery = document.querySelector('.imgs-container');
     elGallery.innerHTML = strHtml;
+}
+
+function renderKeyWords(){
+    var currKeyWords=getKeyWords();
+    displayWords(currKeyWords)
 }
 
 
@@ -36,3 +41,23 @@ function onSetFilter(elTxt) {
 function onChangeColor(color) {
     changeColor(color);
 }
+
+function onSearch(){
+   var elWord= document.querySelector('input[type="text"]').value
+   setNewSearchwWord(elWord)
+   document.querySelector('input[type="text"]').value=''  
+   renderKeyWords();
+}
+
+function displayWords(arr){
+    
+    var strHtml=''
+    for (var currKey in arr) {
+        strHtml+='<li>'
+        var currValue = arr[currKey];
+        strHtml+=`${currKey} </li>`
+    }
+    document.querySelector('.key-words-list').innerHTML=strHtml;
+    
+}
+
