@@ -65,7 +65,9 @@ function getImgsForDisplay() {
 
 function setNewSearchwWord(word){
     if(!gKeywords[word]) gKeywords[word]=1;
-    else gKeywords[word]++
+    else gKeywords[word]++;
+        
+    
 }
 
 function getKeyWords(){
