@@ -12,30 +12,34 @@
 
 <body onload="init()">
 
-<canvas id="my-canvas" width="600" height="600">
-    Update your browser to enjoy canvas!
-</canvas>
+    <nav-bar class="nav-bar flex align-both ">
+        <button><a href="index.html">Gallery</a></button>
+        <button class="download"> <a href="#" class="save" onclick="downloadCanvas(this)" download="">Download</a>
+        </button>
+    </nav-bar>
+
+<main>
+    <section class="flex">
+
+        <canvas id="my-canvas" width="600" height="600">
+            Update your browser to enjoy canvas!
+        </canvas>
 
 
-<div>
+        <div class="userChoice flex">
 
-<!-- <form id="frmRegister">
-   
-           <label for="text">Enter text:</label>
-        <input onchange="onChangeText(event)" type="text" id="name" name="text" placeholder="Enter text here" required />
+    <input class="input" type="color" onchange="onChangeColor(this.value)" />
+            Enter some text: <input type="text" name="txt" oninput="onDrawText(this)">
 
-
-</form><br /> -->
-
-Enter some text: <input type="text" name="txt" oninput="onDrawText(this)">
-
-<button ><a href="index.html">Gallery</a></button>
-<!-- <button onclick="increaseFontSize()">+</button> -->
+            <!-- <button onclick="increaseFontSize()">+</button> -->
 
 
 
-</div>
+        </div>
 
+    </section>
+
+    
     <script src="js/util-service.js"></script>
     <script src="js/gallery-service.js"></script>
     <script src="js/gallery-controller.js"></script>
