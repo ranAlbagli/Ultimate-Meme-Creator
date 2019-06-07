@@ -11,7 +11,7 @@ function init() {
     var img = new Image()
     img.src = `meme-imgs/${imgId}.jpg`
     img.onload = function () {
-        ctx.drawImage(img, 0, 0, canvas.height, canvas.width);
+    ctx.drawImage(img, 0, 0, canvas.height, canvas.width);
 
     }
 

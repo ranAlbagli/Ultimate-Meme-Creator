@@ -29,7 +29,6 @@
   }
 
   header{
-    display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
@@ -38,3 +37,12 @@
   }
 
 
+.words li {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  line-height: 130px;
+  height: 130px;
+  width: 8.4375rem;
+  text-align: center;
+}
