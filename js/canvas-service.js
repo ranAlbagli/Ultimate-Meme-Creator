@@ -27,3 +27,16 @@ function changeColor(color) {
 function getMeme(){
    return gMeme;
 }
+
+
+
+function clearCanvas() {
+   // ctx.fillStyle = 'white'
+   // ctx.fillRect(0, 0, gCanvas.width, gCanvas.height)
+
+   // ctx.fillText('', 160, 50);
+
+   createCanvas()
+   
+
+}

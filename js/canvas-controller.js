@@ -26,7 +26,7 @@ function onDrawText(elText) {
     ctx.fillStyle = gColor;
     ctx.fillText(text, 160, 50);
     // ctx.fillText(text, canvas.height, canvas.width);
-
+//   return text;
 }
 
 
@@ -45,3 +45,6 @@ function onLoadImg() {
     return loadFromStorage('img')
 }
 
+function onClearCanvas() {
+    clearCanvas();
+}
