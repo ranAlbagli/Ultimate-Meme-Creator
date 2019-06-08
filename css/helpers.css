@@ -1,6 +1,7 @@
 
-
-
+.wrap{
+  flex-wrap: wrap;
+}
 .flex{
   display: flex;
 }
