@@ -18,8 +18,13 @@ var gTrans = {
 
     uploadButton:
     {
-        en: 'choose file',
+        en: 'Choose file',
         he: ' בחר/י קובץ '
+    },
+    font:
+    {
+        en: 'Font size',
+        he: ' סוג פונט '
     },
 }
 
