@@ -17,9 +17,9 @@
         <ul class="main-nav-list clean-list flex align-both">
             <li><a class=" flex align-both list-item" href="">PORTFOLIO</a></li>
             <li><a class=" flex align-both list-item" href="">ABOUT</a></li>
-            <li class=" flex align-both list-item" href=""><img class="hexagon" src="icons/Logo.png" alt=""></li>
+            <li class=" flex align-both list-item" href=""><img src="icons/Logo.png" alt=""></li>
             <li><a class=" flex align-both list-item" href="">BLOG</a></li>
-            <li><a class=" flex align-both list-item" href="">GET IN TOUCH</a></li>
+            <li><a class=" flex align-both list-item" href="#contact">GET IN TOUCH</a></li>
         </ul>
     </nav>
 
@@ -28,13 +28,13 @@
     <header class="flex">
         <h1>Ultimate Meme Creator</h1>
         <input type="text" oninput="onSetFilter(this)" onkeyup="runScript(event)" onclick="onSearch()">
-        <!-- <div class="search-container">
-            <ul class="key-words-list flex words clean-list wrap">
-                
-            </ul>
-        </div> -->
+
     </header>
-    <section class="imgs-container">
+    <!-- <section class="imgs-container">
+    </section> -->
+
+    <section class="container">
+
     </section>
 
     <div class="search-container">
@@ -43,7 +43,7 @@
         </ul>
     </div>
 
-    <section class="contact">
+    <section id="contact" class="contact">
         <h4>Contact Me</h4>
         <form>
             <label> Subject:
@@ -57,9 +57,6 @@
             <button type="button" class="btn btn-primary" onclick="onContact()">submit</button>
         </form>
     </section>
-
-
-
 
     <script src="js/util-service.js"></script>
     <script src="js/gallery-service.js"></script>

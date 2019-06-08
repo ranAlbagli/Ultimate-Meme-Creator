@@ -14,10 +14,14 @@ function renderImages() {
     var strHtml = '';
     for (var i = 0; i < imgs.length; i++) {
         var img=imgs[i];
-        strHtml+= `<a class="gallery-item" href="canvas-editor.html" onclick= "onSaveImg(${img.id})" >
-                    <img src="./meme-imgs/${img.id}.jpg" alt=""></a>`
+        strHtml+= `<div class="item">
+                   <div class="hexagon">
+                    <a class="gallery-item" href="canvas-editor.html" onclick= "onSaveImg(${img.id})" >
+                    <img src="./meme-imgs/${img.id}.jpg" alt=""></a>
+                </div>
+                </div>`
     }    
-    var elGallery = document.querySelector('.imgs-container');
+    var elGallery = document.querySelector('.container');
     elGallery.innerHTML = strHtml;
 }
 
