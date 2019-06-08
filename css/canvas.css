@@ -1,6 +1,13 @@
 
 /*  Layout */
 
+body.rtl{
+  direction: rtl;
+  text-align: right;
+}
+
+
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -28,14 +35,17 @@
     background: black;
 }
 
-.download{
-  margin-left: 20px;
-}
-
-.clear {
+.nav-bar button{
     margin-left: 20px;
-
+    margin-left: 20px;
 }
+
+ .lang{
+    margin-left: 20px;
+    margin-left: 20px;
+ }
+
+
 .control-box{
  /* width: 100px; */
  height: 100%;
