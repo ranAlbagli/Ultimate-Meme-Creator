@@ -42,8 +42,13 @@
                 <input class="input" type="color" onchange="onChangeColor(this.value)" />
 
 <label>Font size:
-    <input type="range" class="font-size" min="10" max="50">
+    <input type="range" class="font-size"  value = font-size min="10" max="50" step="2" data-property="size" oninput="editTxtSize(this)">
 </label>
+
+<!-- 
+                    <input type="range" value="${txt.size}" min="10" step="2" data-property="size"
+                        oninput="editTxt(this ,${idx})"> -->
+
                 <!-- Enter some text:<input type="text" name="txt" oninput="onDrawText(this)"> -->
 
             </div>
