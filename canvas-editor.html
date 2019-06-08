@@ -20,10 +20,18 @@
             <option value="he">עברית</option>
         </select>
 
-        <button data-trans="backToGalleryButton" ><a href="index.html">Gallery</a></button>
+        <button  ><a href="index.html" data-trans="backToGalleryButton">Gallery</a></button>
+
+        <input class="upload" type="file" name="image" onchange="onFileInputChange(event)" />
+
         <button data-trans="downloadButton" class="download"> <a href="#" class="save" onclick="downloadCanvas(this)" download="">Download</a>
         </button>
         <button data-trans="clearButton" class="clear" onclick="onClearCanvas()">Clear</button>
+
+        <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+            <input name="img" id="imgData" type="hidden" />
+            <button type="submit">Publish</button>
+        </form>
 
     </nav-bar>
 
@@ -63,8 +71,13 @@
                 <!-- Enter some text:<input type="text" name="txt" oninput="onDrawText(this)"> -->
 
             </div>
+            <div id="fb-root"></div>
+<div class="share-container"></div>
+
 
         </section>
+
+
 
 
         <script src="js/util-service.js"></script>

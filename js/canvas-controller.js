@@ -100,3 +100,22 @@ function onSetLang(lang) {
     // renderBooks()
     doTrans();
 }
+
+
+
+
+
+// upload
+
+
+
+function renderCanvas(img) {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+}
+
+
+function onFileInputChange(ev) {
+    handleImageFromInput(ev, renderCanvas)
+}
