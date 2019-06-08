@@ -72,4 +72,8 @@ function onSearch(){
 }
 
 
-
+function onContact() {
+    var userSubject = document.querySelector('.user-subject').value;
+    var userMsg = document.querySelector('.user-msg').value;
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=albagli.ran@gmail.com&su=${userSubject}&body=${userMsg}`, '_blank')
+}
