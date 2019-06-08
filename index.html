@@ -14,10 +14,9 @@
 <body onload="onInit()">
     <header class="flex">
         <h1>Ultimate Meme Creator</h1>
-        <form> <input type="text" oninput="onSetFilter(this)" onkeypress="runScript(event)"></form>
-        <button  class="searchBtn" onclick="onSearch()">search</button>
+        <input type="text" oninput="onSetFilter(this)" onkeyup="runScript(event)" onclick="onSearch()">
         <div class="search-container">
-            <ul class="key-words-list flex words clean-list">
+            <ul class="key-words-list flex words clean-list wrap">
                 
             </ul>
         </div>

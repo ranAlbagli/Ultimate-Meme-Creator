@@ -42,7 +42,7 @@ var gImgs = [
 function saveImg(imgId){
 
     saveToStorage('img',imgId)
-    window.location.href = "canvas-editor.html";
+    // window.location.href = "canvas-editor.html";
 }
 
 function getImages(){
@@ -68,10 +68,10 @@ function getImgsForDisplay() {
 function setNewSearchwWord(word){
     if(!gKeywords[word]) gKeywords[word]=1;
     else gKeywords[word]++;
-        
     
 }
 
 function getKeyWords(){
     return gKeywords;
 }
+

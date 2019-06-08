@@ -45,12 +45,10 @@ function onSetFilterByKeyword(txt)
 }
 
 function runScript(ev){
-    
     if (ev.which == 13 || ev.keyCode == 13) {
         ev.preventDefault();
-        // return false;
+        onSearch()
     }
-    // return true;
 };
 
 
