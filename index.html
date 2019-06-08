@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Meme</title>
     <link rel="stylesheet" href="css/gallery.css">
-        <link rel="stylesheet" href="css/helpers.css">
+    <link rel="stylesheet" href="css/helpers.css">
 
 </head>
 
 <body onload="onInit()">
     <header class="flex">
         <h1>Ultimate Meme Creator</h1>
-        <form> <input type="text" oninput="onSetFilter(this,event)"></form>
+        <form> <input type="text" oninput="onSetFilter(this)" onkeypress="runScript(event)"></form>
         <button  class="searchBtn" onclick="onSearch()">search</button>
         <div class="search-container">
             <ul class="key-words-list flex words clean-list">
@@ -25,6 +25,9 @@
     <section class="imgs-container">
     </section>
 
+
+
+    
 
     <script src="js/util-service.js"></script>
     <script src="js/gallery-service.js"></script>

@@ -56,12 +56,14 @@ function setFilter(txt){
 
 function getImgsForDisplay() {    
     if (!gFilterBy) return gImgs;
-    var myRe = new RegExp('^'+`${gFilterBy}`, 'i');
+    var myRe = new RegExp('^'+`${gFilterBy}`, 'i'); 
     var filterImages= gImgs.filter(function (img){
         return myRe.exec(img.keywords);
     })
     return filterImages;
 }
+
+
 
 function setNewSearchwWord(word){
     if(!gKeywords[word]) gKeywords[word]=1;

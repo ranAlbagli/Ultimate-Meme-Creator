@@ -1,9 +1,10 @@
   body {
-            margin: 0;
+             margin: 0;
             height: 100vh;
             width: 100vw;
-            background-color: #2eb398;
-        }
+            background-color:whitesmoke; 
+  }
+
 
 
 
@@ -21,18 +22,26 @@
     height: 100%;
   }
   a{
+    margin:10px;
     width: 20%;
+    border :5px solid #0b0b0b;
+    transition: transform .3s ease-out;
+  }
+
+  a:hover {
+    transform: scale(1.1)
+  
   }
    
   li{
-  
+     cursor: pointer;
   }
 
   header{
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
-    background-color: #323232;
+    background-color: #2eb398;
     color: white;
   }
 

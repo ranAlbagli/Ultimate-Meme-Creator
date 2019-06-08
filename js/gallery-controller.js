@@ -32,11 +32,28 @@ function onSaveImg(elImgIdx){
 }
 
 function onSetFilter(elTxt) {
-    var text=elTxt.value
+    var text=elTxt.value    
     setFilter(text);
-    renderImages();
-   
+    renderImages();  
 }
+
+function onSetFilterByKeyword(txt)
+{
+    setFilter(txt);
+    renderImages();  
+
+}
+
+function runScript(ev){
+    
+    if (ev.which == 13 || ev.keyCode == 13) {
+        ev.preventDefault();
+        // return false;
+    }
+    // return true;
+};
+
+
 
 function onChangeColor(color) {
     changeColor(color);
@@ -49,14 +66,12 @@ function onSearch(){
    renderKeyWords();
 }
 
-function displayWords(arr){
-    console.log('here');
-    
+function displayWords(arr){    
     var strHtml=''
     for (var currKey in arr) {
         var currValue = arr[currKey];
-        var wordSize=currValue*10 +'px';
-        strHtml+=`<li style="font-size:${wordSize}">${currKey} </li>`
+        var wordSize=currValue*15 +'px';
+        strHtml+=`<li  onclick="onSetFilterByKeyword('${currKey}')"  style="font-size:${wordSize}">${currKey} </li>`
     }
     document.querySelector('.key-words-list').innerHTML=strHtml;
     
