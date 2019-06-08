@@ -32,19 +32,23 @@ function onSaveImg(elImgIdx){
 }
 
 function onSetFilter(elTxt) {
-    var text=elTxt.value
+    var text=elTxt.value    
     setFilter(text);
-    renderImages();
-   
+    renderImages();  
 }
 
-function runScript(ev,elTxt){
-    console.log(elTxt.value);
+function onSetFilterByKeyword(txt)
+{
+    setFilter(txt);
+    renderImages();  
+
+}
+
+function runScript(ev){
     
     if (ev.which == 13 || ev.keyCode == 13) {
         ev.preventDefault();
         // return false;
-        onSetFilter('dani')
     }
     // return true;
 };
@@ -67,7 +71,7 @@ function displayWords(arr){
     for (var currKey in arr) {
         var currValue = arr[currKey];
         var wordSize=currValue*15 +'px';
-        strHtml+=`<li style="font-size:${wordSize}">${currKey} </li>`
+        strHtml+=`<li  onclick="onSetFilterByKeyword('${currKey}')"  style="font-size:${wordSize}">${currKey} </li>`
     }
     document.querySelector('.key-words-list').innerHTML=strHtml;
     
