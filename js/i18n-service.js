@@ -15,6 +15,12 @@ var gTrans = {
         en: 'Clear',
         he: ' מחק/י'
     },
+
+    uploadButton:
+    {
+        en: 'choose file',
+        he: ' בחר/י קובץ '
+    },
 }
 
 var gCurrLang = 'en';
