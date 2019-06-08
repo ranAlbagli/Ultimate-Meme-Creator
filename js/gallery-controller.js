@@ -1,6 +1,7 @@
 "use strict"
 
 function onInit() {
+    createKeyWords();
     renderImages();
     renderKeyWords();
 
@@ -22,7 +23,13 @@ function renderImages() {
 
 function renderKeyWords(){
     var currKeyWords=getKeyWords();
-    displayWords(currKeyWords)
+    var strHtml=''
+    for (var currKey in currKeyWords) {
+        var currValue = currKeyWords[currKey];
+        var wordSize=currValue*15 +'px';
+        strHtml+=`<li  onclick="onSetFilterByKeyword('${currKey}')"  style="font-size:${wordSize}">${currKey} </li>`
+    }
+    document.querySelector('.key-words-list').innerHTML=strHtml;
 }
 
 
@@ -64,14 +71,5 @@ function onSearch(){
    renderKeyWords();
 }
 
-function displayWords(arr){    
-    var strHtml=''
-    for (var currKey in arr) {
-        var currValue = arr[currKey];
-        var wordSize=currValue*15 +'px';
-        strHtml+=`<li  onclick="onSetFilterByKeyword('${currKey}')"  style="font-size:${wordSize}">${currKey} </li>`
-    }
-    document.querySelector('.key-words-list').innerHTML=strHtml;
-    
-}
+
 
