@@ -2,6 +2,7 @@
 
 let gColor;
 var gMeme;
+let currentElement = null;
 
 function createMeme(){
 
@@ -45,4 +46,11 @@ function clearCanvas() {
 // function getTxtSize(elSize) {
 //    gTxtSize = elSize.value;
 //    return gTxtSize;
+// }
+
+
+// function changeCurrentFont(element){
+//    currentElement = element;
+//    return currentElement
+
 // }

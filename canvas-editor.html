@@ -45,9 +45,15 @@
     <input type="range" class="font-size"  value = font-size min="10" max="50" step="2" data-property="size" oninput="editTxtSize(this)">
 </label>
 
-<!-- 
-                    <input type="range" value="${txt.size}" min="10" step="2" data-property="size"
-                        oninput="editTxt(this ,${idx})"> -->
+    <select onchange="onChangeFont(this.value)">
+    <option>Font</option>
+    <option value="Arial">Arial</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Helvetica">Helvetica</option>
+    <option value="Verdana">Verdana</option>
+
+  
+    </select>
 
                 <!-- Enter some text:<input type="text" name="txt" oninput="onDrawText(this)"> -->
 
