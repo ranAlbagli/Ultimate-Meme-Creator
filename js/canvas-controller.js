@@ -1,11 +1,11 @@
 
 let canvas;
 let ctx;
+let gTxtSize = 10;
+let gTxt = '';
 
 
-function init() {
-    console.log('here');
-    
+function init() {    
     createCanvas()
 }
 
@@ -22,13 +22,30 @@ function init() {
     }
  }
 function onDrawText(elText) {   
-    var text = elText.value;
+    // var text = elText.value;
+    gTxt = elText.value;
+
     ctx.font = "30px impac";
-    // ctx.font = text + '30px ' + 'Impact';
+// console.log(gTxt);
+
+
     ctx.fillStyle = gColor;
-    ctx.fillText(text, 160, 50);
+    // ctx.fillText(text, 160, 50);
+    ctx.fillText(gTxt, 160, 50);
+
+
     // ctx.fillText(text, canvas.height, canvas.width);
 //   return text;
+}
+
+function editTxtSize(elSize){
+    gTxtSize = elSize.value;
+    ctx.font = gTxtSize + 'px ' + ' ' + ' Impact';
+    ctx.fillText(gTxt, 160, 50);
+
+
+   
+
 }
 
 

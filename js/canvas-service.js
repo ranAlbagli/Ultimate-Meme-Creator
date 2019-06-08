@@ -40,3 +40,9 @@ function clearCanvas() {
    
 
 }
+
+
+// function getTxtSize(elSize) {
+//    gTxtSize = elSize.value;
+//    return gTxtSize;
+// }
