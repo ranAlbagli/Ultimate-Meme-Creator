@@ -5,7 +5,6 @@ let gCtx;
 function init() {
     gMeme = createMeme()
     createCanvas()
-    console.log(gMeme);
     renderTxtsEditor()
 }
 
@@ -97,28 +96,28 @@ function onChangeFont(elementName) {
     currentElement = elementName;
     switch (currentElement) {
         case 'Arial':
-            gCtx.font = gTxtSize + 'px ' + ' ' + ' Arial';
-            gCtx.fillText(gTxt, 160, 150);
+            ctx.font = gTxtSize + 'px ' + ' ' + ' Arial';
+            ctx.fillText(gTxt, 160, 150);
             break;
         case 'Times New Roman':
             gCtx.font = gTxtSize + 'px ' + ' ' + 'Times New Roman';
             gCtx.fillText(gTxt, 160, 150);
             break;
         case 'Helvetica':
-            gCtx.font = gTxtSize + 'px ' + ' ' + ' Helvetica';
-            gCtx.fillText(gTxt, 160, 150);
+            ctx.font = gTxtSize + 'px ' + ' ' + ' Helvetica';
+            ctx.fillText(gTxt, 160, 150);
             break;
         case 'Verdana':
-            gCtx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
-            gCtx.fillText(gTxt, 160, 150);
+            ctx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
+            ctx.fillText(gTxt, 160, 150);
             break;
         case 'Tahoma':
-            gCtx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
-            gCtx.fillText(gTxt, 160, 150);
+            ctx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
+            ctx.fillText(gTxt, 160, 150);
             break;
         case 'Geneva':
-            gCtx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
-            gCtx.fillText(gTxt, 160, 150);
+            ctx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
+            ctx.fillText(gTxt, 160, 150);
             break;
     }
 }
@@ -163,7 +162,7 @@ function onSetLang(lang) {
 function renderCanvas(img) {
     canvas.width = img.width;
     canvas.height = img.height;
-    gCtx.drawImage(img, 0, 0);
+    ctx.drawImage(img, 0, 0);
 }
 
 

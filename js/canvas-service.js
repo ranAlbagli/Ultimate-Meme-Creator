@@ -1,6 +1,5 @@
 'use strict'
 
-
 let gMeme;
 let gColor;
 let currentElement = null;
@@ -11,6 +10,7 @@ function createMeme() {
       txts: [
          createTxt('Enter Text here', 150, 70), createTxt('Enter Text here', 150, 300)]
    };
+   
 }
 
 
@@ -36,6 +36,9 @@ function getMeme() {
 }
 
 
+   function getCanvas(){
+      return gCanvas;
+   }
 
 function clearCanvas() {
    createCanvas()
