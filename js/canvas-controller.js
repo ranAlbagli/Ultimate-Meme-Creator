@@ -1,15 +1,11 @@
 
 let canvas;
-let gCtx;
-
-
-
+let ctx;
 
 
 function init() {    
-    gMeme = createMeme()
+    createMeme()
     createCanvas()
-    console.log(gMeme);
     renderTxtsEditor()
 }
 
@@ -86,13 +82,15 @@ function editTxt(elinput, txtIdx) {
 
 
  function createCanvas(){
-    var imgId = onLoadImg();
+    let imgId = onLoadImg();
+    // let canvas = getCanvas();
+    // let ctx = getCtx()
     canvas = document.querySelector('#my-canvas');
-    gCtx = canvas.getContext("2d");
+    ctx = canvas.getContext("2d");
     var img = new Image()
     img.src = `meme-imgs/${imgId}.jpg`
     img.onload = function () {
-        gCtx.drawImage(img, 0, 0, canvas.height, canvas.width);
+        ctx.drawImage(img, 0, 0, canvas.height, canvas.width);
 
         gMeme.txts.forEach(function (txt) {
             drawTxt(txt);
@@ -102,11 +100,10 @@ function editTxt(elinput, txtIdx) {
 
 
 function drawTxt(txt) {
-    
-    gCtx.font = txt.size + 'px' + ' ' + txt.font;
-    gCtx.textAlign = txt.align;
-    gCtx.fillStyle = txt.color;
-    gCtx.fillText(txt.line, txt.x, txt.y);
+    ctx.font = txt.size + 'px' + ' ' + txt.font;
+    ctx.textAlign = txt.align;
+    ctx.fillStyle = txt.color;
+    ctx.fillText(txt.line, txt.x, txt.y);
 }
 
 
@@ -114,28 +111,28 @@ function onChangeFont(elementName) {
     currentElement = elementName;
     switch (currentElement) {
         case 'Arial':
-            gCtx.font = gTxtSize + 'px ' + ' ' + ' Arial';
-            gCtx.fillText(gTxt, 160, 150);
+            ctx.font = gTxtSize + 'px ' + ' ' + ' Arial';
+            ctx.fillText(gTxt, 160, 150);
             break;
         case 'Times New Roman':
-            gCtx.font = gTxtSize + 'px ' + ' ' + 'Times New Roman';
-            gCtx.fillText(gTxt, 160, 150);  
+            ctx.font = gTxtSize + 'px ' + ' ' + 'Times New Roman';
+            ctx.fillText(gTxt, 160, 150);  
                       break;
         case 'Helvetica':
-            gCtx.font = gTxtSize + 'px ' + ' ' + ' Helvetica';
-            gCtx.fillText(gTxt, 160, 150);
+            ctx.font = gTxtSize + 'px ' + ' ' + ' Helvetica';
+            ctx.fillText(gTxt, 160, 150);
             break;
         case 'Verdana':
-            gCtx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
-            gCtx.fillText(gTxt, 160, 150);
+            ctx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
+            ctx.fillText(gTxt, 160, 150);
             break;
         case 'Tahoma':
-            gCtx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
-            gCtx.fillText(gTxt, 160, 150);
+            ctx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
+            ctx.fillText(gTxt, 160, 150);
             break;
         case 'Geneva':
-            gCtx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
-            gCtx.fillText(gTxt, 160, 150);
+            ctx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
+            ctx.fillText(gTxt, 160, 150);
             break;
     }
 }
@@ -159,10 +156,7 @@ function downloadCanvas(elLink) {
 
 
 function onLoadImg() {
-    var imgId = loadFromStorage('img')
-    console.log(imgId);
-    
-    return imgId
+    return loadImg();
 }
 
 function onClearCanvas() {
@@ -185,7 +179,7 @@ function onSetLang(lang) {
 function renderCanvas(img) {
     canvas.width = img.width;
     canvas.height = img.height;
-    gCtx.drawImage(img, 0, 0);
+    ctx.drawImage(img, 0, 0);
 }
 
 

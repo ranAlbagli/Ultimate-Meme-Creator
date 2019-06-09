@@ -4,13 +4,16 @@
 let gMeme;
 let gColor;
 let currentElement = null;
+let gCanvas;
+let gCtx;
 
 function createMeme() {
-   return {
+   gMeme= {
       selectedImgId: 1,
       txts: [
          createTxt('Text', 150, 70), createTxt('Text', 150, 300)]
    };
+   
 }
 
 
@@ -39,17 +42,21 @@ function createTxt(line, x, y) {
 
 
    function clearCanvas() {
-
-
       createCanvas()
+   }
 
-
+   function loadImg(){
+      return loadFromStorage('img')
    }
 
 
+   function getCanvas(){
+      return gCanvas;
+   }
 
-
-
+   function getCtx(){
+      return gCtx;
+   }
 
    //UPLOAD IMG WITH INPUT FILE
    function handleImageFromInput(ev, onImageReady) {
@@ -103,9 +110,6 @@ function createTxt(line, x, y) {
          })
    }
 
-
-
-
    // facebook api
    (function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -114,3 +118,6 @@ function createTxt(line, x, y) {
       js.src = 'https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v3.0&appId=807866106076694&autoLogAppEvents=1';
       fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+
+  
