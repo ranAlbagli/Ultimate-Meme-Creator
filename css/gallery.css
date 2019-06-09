@@ -3,6 +3,13 @@
     font-family: Lato;
     src: url('../fonts/lato/Lato-Regular.ttf');
 }
+
+@font-face {
+  font-family: Maven-pro;
+  src: url('../fonts/maven-pro/MavenPro-Regular.ttf');
+}
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -62,24 +69,11 @@ html {
   }
 
   
-.contact{
-  margin: 0;
-  height: 500px;
+.contact-container{
+   margin: 0;
+  height: 500px; 
   background-color: #323232;
 }
-
-h4 ,h6 {
-  margin-top :0;
-}
-
-
-form *{
-  background-color: #fd005f
-}
-
-
-  
-
 
   
 .container{
@@ -177,4 +171,81 @@ form *{
   .item:nth-child(3n+1){ grid-column-start: 1;}
   .item:nth-child(3n+2){ grid-column-start: 3;}
   .item:nth-child(3n){ grid-column-start: 2;}
+}
+
+
+
+
+
+
+
+
+
+form { 
+  max-width:420px; 
+  margin:0 auto; 
+  font-family: Maven-pro;
+  padding-top: 50px; 
+}
+
+.feedback-input {
+  color:white;
+  font-family: Maven-pro;;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: #454545;
+  border:2px solid #454545;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #454545; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  font-family: Maven-pro;
+  width: 100%;
+  background:#2f937f;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#2f937f; }
+
+.first-msg {
+  line-height: 4.56px;
+  font-size: 1.875rem;
+  color: white;
+  margin-top :0;
+}
+
+.second-msg{
+  color: white;
+  font-size: 20px;
+}
+
+footer{
+
+  height: 40px;
+  background-color: #222222;
+  border-top: 1px solid white;
+
 }

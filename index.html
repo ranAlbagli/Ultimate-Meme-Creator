@@ -19,7 +19,7 @@
             <li><a class=" flex align-both list-item" href="#gallery">GALLERY</a></li>
             <li><a class=" flex align-both list-item" href="#keywords">KEYWORDS</a></li>
             <li class=" flex align-both list-item" href=""><img src="icons/Logo.png" alt=""></li>
-            <li><a class=" flex align-both list-item" href="">ABOUT</a></li>
+            <li><a class=" flex align-both list-item" href="#">ABOUT</a></li>
             <li><a class=" flex align-both list-item" href="#contact">GET IN TOUCH</a></li>
         </ul>
     </nav>
@@ -31,33 +31,31 @@
         <input type="text" oninput="onSetFilter(this)" onkeyup="runScript(event)" onclick="onSearch()">
 
     </header>
-    
+
     <section id="gallery" class="container">
 
     </section>
 
     <div id="keywords" class="search-container">
-        <ul class="key-words-list flex words clean-list wrap">
+        <ul class="key-words-list flex words clean-list wrap align-both">
 
         </ul>
     </div>
 
-    <section id="contact" class="contact">
-        <form class="">
-                <h4>Contact Me</h4>
-                <h6>In order to get in touch use the contact form below</h6>
-                
-            <label> Subject:
-                <input class="user-subject" type="text" placeholder="Type your subject here">
-            </label>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Message body</label>
-                <textarea class=" user-msg" id="exampleFormControlTextarea1" rows="3"
-                    placeholder="Type your message here"></textarea>
-            </div>
-            <button type="button" class="btn btn-primary" onclick="onContact()">send</button>
+    <section class="contact-container">
+        <form id="contact">
+            <p class="first-msg">Get In Touch</p>
+            <p class="second-msg">In order to get in touch use the contact form below</p>
+            <input name="name" type="text" class="feedback-input" placeholder="Subject" />
+            <textarea name="text" class="feedback-input" placeholder="Write your message here..."></textarea>
+            <input type="submit" value="SEND" onclick="onContact()" />
         </form>
     </section>
+
+    <footer></footer>
+
+
+
 
     <script src="js/util-service.js"></script>
     <script src="js/gallery-service.js"></script>
