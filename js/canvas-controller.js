@@ -2,18 +2,12 @@
 let canvas;
 let gCtx;
 
-
-
-
-
 function init() {
     gMeme = createMeme()
     createCanvas()
     console.log(gMeme);
     renderTxtsEditor()
 }
-
-
 
 function renderTxtsEditor() {
     var strHtml = gMeme.txts.map(function (txt, idx) {
@@ -161,8 +155,6 @@ function onSetLang(lang) {
     else document.body.classList.remove('rtl');
     doTrans();
 }
-
-
 
 
 

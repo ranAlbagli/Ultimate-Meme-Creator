@@ -165,8 +165,12 @@ a {
   }
 
   .nav-bar button {
-  margin-left: 5px;
-  margin-left: 5px;
+  padding: 15px;
+
+
+}
+.lang{
+  margin-left: 55px;
 
 }
 
@@ -181,8 +185,15 @@ a {
 
 }
 
+.main-wrapper{
+   display: flex;
+   flex-direction: column;
+    margin: 5px 0;
+}
+
 .canvas{
-   max-width: 740px;
+   /* max-width: 740px; */
+  border: none;
 
 }
 }
