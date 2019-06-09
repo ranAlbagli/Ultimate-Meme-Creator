@@ -15,10 +15,10 @@
 
     <nav class="main-navbar">
         <ul class="main-nav-list clean-list flex align-both">
-            <li><a class=" flex align-both list-item" href="">PORTFOLIO</a></li>
-            <li><a class=" flex align-both list-item" href="">ABOUT</a></li>
+            <li><a class=" flex align-both list-item" href="#gallery">GALLERY</a></li>
+            <li><a class=" flex align-both list-item" href="#keywords">KEYWORDS</a></li>
             <li class=" flex align-both list-item" href=""><img src="icons/Logo.png" alt=""></li>
-            <li><a class=" flex align-both list-item" href="">BLOG</a></li>
+            <li><a class=" flex align-both list-item" href="">ABOUT</a></li>
             <li><a class=" flex align-both list-item" href="#contact">GET IN TOUCH</a></li>
         </ul>
     </nav>
@@ -30,22 +30,22 @@
         <input type="text" oninput="onSetFilter(this)" onkeyup="runScript(event)" onclick="onSearch()">
 
     </header>
-    <!-- <section class="imgs-container">
-    </section> -->
-
-    <section class="container">
+    
+    <section id="gallery" class="container">
 
     </section>
 
-    <div class="search-container">
+    <div id="keywords" class="search-container">
         <ul class="key-words-list flex words clean-list wrap">
 
         </ul>
     </div>
 
     <section id="contact" class="contact">
-        <h4>Contact Me</h4>
-        <form>
+        <form class="">
+                <h4>Contact Me</h4>
+                <h6>In order to get in touch use the contact form below</h6>
+                
             <label> Subject:
                 <input class="user-subject" type="text" placeholder="Type your subject here">
             </label>
@@ -54,7 +54,7 @@
                 <textarea class=" user-msg" id="exampleFormControlTextarea1" rows="3"
                     placeholder="Type your message here"></textarea>
             </div>
-            <button type="button" class="btn btn-primary" onclick="onContact()">submit</button>
+            <button type="button" class="btn btn-primary" onclick="onContact()">send</button>
         </form>
     </section>
 

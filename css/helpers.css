@@ -26,3 +26,7 @@
 .align-center {
   align-items: center;
 }
+
+.col {
+  flex-direction: column;
+}
