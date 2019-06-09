@@ -1,51 +1,110 @@
 
 let canvas;
-let ctx;
-let gTxtSize = 56;
-let gTxt = '';
+let gCtx;
+// let gTxtSize = 56;
+// let gTxt = '';
+
 
 
 
 function init() {    
+    gMeme = createMeme()
     createCanvas()
+    console.log(gMeme);
+    renderTxtsEditor()
+}
 
+
+
+function renderTxtsEditor() {
+    var strHtml = gMeme.txts.map(function (txt, idx) {
+        return `
+
+                  <p>
+
+
+                    <input type="text" data-property="line" placeholder="${txt.line}" oninput="editTxt(this,${idx})">
+                    <i class="fas fa-text-height"></i> <input type="range" value="${txt.size}"  min="10" step="2" data-property="size" oninput="editTxt(this ,${idx})">
+                    <input type="color" value="${txt.color}" data-property="color" oninput="editTxt(this,${idx})">
+                    Font: 
+                    <select data-property="font" oninput="editTxt(this,${idx})">
+                    <option value="${txt.font}">${txt.font}</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Verdana">Verdana</option>
+                     <option value="Tahoma">Tahoma</option>
+                    <option value="Geneva">Geneva</option>
+                    </select>
+                    </p>
+                    <br>
+
+        
+        `
+    })
+        .join(' ');
+
+    document.querySelector('.choice-wrapper').innerHTML = strHtml;
+
+}
+
+function editTxt(elinput, txtIdx) {
+    var property = elinput.dataset.property;  // using data-* attributes
+    var value;
+    switch (elinput.type) {
+        case 'select-one':
+            value = elinput.options[elinput.selectedIndex].value;
+            break;
+        case 'checkbox':
+            value = elinput.checked;
+            break;
+        default: // text, number
+            value = elinput.value;
+            break;
+    }
+    gMeme.txts[txtIdx][property] = value;
+
+
+    createCanvas();
 }
 
 
  function createCanvas(){
     var imgId = onLoadImg();
     canvas = document.querySelector('#my-canvas');
-    ctx = canvas.getContext("2d");
+    gCtx = canvas.getContext("2d");
     var img = new Image()
     img.src = `meme-imgs/${imgId}.jpg`
     img.onload = function () {
-    ctx.drawImage(img, 0, 0, canvas.height, canvas.width);
+        gCtx.drawImage(img, 0, 0, canvas.height, canvas.width);
 
-    }
+        gMeme.txts.forEach(function (txt) {
+            drawTxt(txt);
+        });
  }
-function onDrawText(elText) {   
-    // var text = elText.value;
-    gTxt = elText.value;
-
-    ctx.font = "30px impac";
-// console.log(gTxt);
-
-
-    ctx.fillStyle = gColor;
-    // ctx.fillText(text, 160, 50);
-    ctx.fillText(gTxt, 160, 50);
-
-
-    // ctx.fillText(text, canvas.height, canvas.width);
-//   return text;
 }
 
-function editTxtSize(elSize){
-    gTxtSize = elSize.value;
-    ctx.font = gTxtSize + 'px ' + ' ' + ' Impact';
-    ctx.fillText(gTxt, 160, 50);
 
+function drawTxt(txt) {
+    // console.log(txt);
+    // console.log(gCtx);
+    
+    
+    gCtx.font = txt.size + 'px' + ' ' + txt.font;
+    gCtx.textAlign = txt.align;
+    gCtx.fillStyle = txt.color;
+
+
+    gCtx.fillText(txt.line, txt.x, txt.y);
 }
+
+
+// function editTxtSize(elSize){
+//     gTxtSize = elSize.value;
+//     ctx.font = gTxtSize + 'px ' + ' ' + ' Impact';
+//     ctx.fillText(gTxt, 160, 50);
+
+// }
 
 
 
@@ -53,20 +112,28 @@ function onChangeFont(elementName) {
     currentElement = elementName;
     switch (currentElement) {
         case 'Arial':
-            ctx.font = gTxtSize + 'px ' + ' ' + ' Arial';
-            ctx.fillText(gTxt, 160, 150);
+            gCtx.font = gTxtSize + 'px ' + ' ' + ' Arial';
+            gCtx.fillText(gTxt, 160, 150);
             break;
         case 'Times New Roman':
-            ctx.font = gTxtSize + 'px ' + ' ' + 'Times New Roman';
-            ctx.fillText(gTxt, 160, 150);  
+            gCtx.font = gTxtSize + 'px ' + ' ' + 'Times New Roman';
+            gCtx.fillText(gTxt, 160, 150);  
                       break;
         case 'Helvetica':
-            ctx.font = gTxtSize + 'px ' + ' ' + ' Helvetica';
-            ctx.fillText(gTxt, 160, 150);
+            gCtx.font = gTxtSize + 'px ' + ' ' + ' Helvetica';
+            gCtx.fillText(gTxt, 160, 150);
             break;
         case 'Verdana':
-            ctx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
-            ctx.fillText(gTxt, 160, 150);
+            gCtx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
+            gCtx.fillText(gTxt, 160, 150);
+            break;
+        case 'Tahoma':
+            gCtx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
+            gCtx.fillText(gTxt, 160, 150);
+            break;
+        case 'Geneva':
+            gCtx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
+            gCtx.fillText(gTxt, 160, 150);
             break;
     }
 }
@@ -107,12 +174,10 @@ function onSetLang(lang) {
 
 // upload
 
-
-
 function renderCanvas(img) {
     canvas.width = img.width;
     canvas.height = img.height;
-    ctx.drawImage(img, 0, 0);
+    gCtx.drawImage(img, 0, 0);
 }
 
 
