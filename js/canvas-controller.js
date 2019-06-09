@@ -1,8 +1,7 @@
 
 let canvas;
 let gCtx;
-// let gTxtSize = 56;
-// let gTxt = '';
+
 
 
 
@@ -36,6 +35,23 @@ function renderTxtsEditor() {
                      <option value="Tahoma">Tahoma</option>
                     <option value="Geneva">Geneva</option>
                     </select>
+                    <br>
+
+                    <p>
+                    <i class="fas fa-arrows-alt-h"></i> <input type="number" value="${txt.x}"  min="0" step="5" data-property="x" oninput="editTxt(this ,${idx})">
+                    <i class="fas fa-arrows-alt-v"></i> <input type="number" value="${txt.y}"  min="0" step="5" data-property="y" oninput="editTxt(this ,${idx})">
+
+                    <select data-property="align" oninput="editTxt(this,${idx})">
+                    <option value="left">left</option>
+                    <option value="center">center</option>
+                    <option value="right">right</option>
+                     </select>
+                    </p>
+
+
+                       <button class="btn"onclick="newTxtBtnClicked()">
+                    <i class="fas fa-plus"></i> Add Line
+                </button>
                     </p>
                     <br>
 
@@ -86,26 +102,12 @@ function editTxt(elinput, txtIdx) {
 
 
 function drawTxt(txt) {
-    // console.log(txt);
-    // console.log(gCtx);
-    
     
     gCtx.font = txt.size + 'px' + ' ' + txt.font;
     gCtx.textAlign = txt.align;
     gCtx.fillStyle = txt.color;
-
-
     gCtx.fillText(txt.line, txt.x, txt.y);
 }
-
-
-// function editTxtSize(elSize){
-//     gTxtSize = elSize.value;
-//     ctx.font = gTxtSize + 'px ' + ' ' + ' Impact';
-//     ctx.fillText(gTxt, 160, 50);
-
-// }
-
 
 
 function onChangeFont(elementName) {
@@ -139,7 +141,11 @@ function onChangeFont(elementName) {
 }
 
 
-
+function newTxtBtnClicked() {
+    gMeme.txts.push(createTxt('New Line', 150, 150));
+    createCanvas()
+    renderTxtsEditor();
+}
 
 
 
@@ -153,7 +159,10 @@ function downloadCanvas(elLink) {
 
 
 function onLoadImg() {
-    return loadFromStorage('img')
+    var imgId = loadFromStorage('img')
+    console.log(imgId);
+    
+    return imgId
 }
 
 function onClearCanvas() {
@@ -164,7 +173,6 @@ function onSetLang(lang) {
     setLang(lang);
     if (lang === 'he') document.body.classList.add('rtl');
     else document.body.classList.remove('rtl');
-    // renderBooks()
     doTrans();
 }
 

@@ -47,17 +47,6 @@ function createTxt(line, x, y) {
    }
 
 
-   // function getTxtSize(elSize) {
-   //    gTxtSize = elSize.value;
-   //    return gTxtSize;
-   // }
-
-
-   // function changeCurrentFont(element){
-   //    currentElement = element;
-   //    return currentElement
-
-   // }
 
 
 

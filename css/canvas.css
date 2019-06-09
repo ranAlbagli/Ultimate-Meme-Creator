@@ -1,16 +1,15 @@
-
 /*  Layout */
 
-body.rtl{
+body.rtl {
   direction: rtl;
   text-align: right;
+
 }
-
-
 
 * {
   margin: 0;
   box-sizing: border-box;
+
 }
 
 .container {
@@ -18,55 +17,133 @@ body.rtl{
   margin: 0 auto;
 }
 
-
 .main-wrapper {
   border-right: 1px solid #e1e0e0;
   border-left: 1px solid #e1e0e0;
   padding: 20px;
 }
 
-     #my-canvas {
-            border: 1px solid black;
-        }
+.canvas {
+  border: 1px solid black;
+
+}
 
 .nav-bar {
-    width: 100vw;
-    height: 50px;
-    background: black;
+  width: 100vw;
+  height: 50px;
+  background: black;
 }
 
-.nav-bar button{
-    margin-left: 20px;
-    margin-left: 20px;
+.nav-bar button {
+  margin-left: 20px;
+  margin-left: 20px;
+    cursor: pointer;
+
+
 }
 
- .lang{
-    margin-left: 20px;
-    margin-left: 20px;
- }
+.lang {
+  margin-left: 20px;
+  margin-left: 20px;
+}
 
- .upload{
-    margin-left: 20px;
-    margin-left: 20px;
- }
+ .upload {
+  margin-left: 20px;
+  margin-left: 20px;
+    cursor: pointer;
 
-.control-box{
- /* width: 100px; */
- height: 100%;
-   padding: 10px;
-   flex-direction: column;
-   border: 2px solid black;
+}
 
+/* .upload {
+  margin-left: 20px;
+  margin-left: 20px;
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+} */
+
+/* 
+
+ .upload + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+} */
+
+
+
+/* .upload + label {
+	cursor: pointer; 
+}  */
+
+.control-box {
+  /* width: 100px; */
+  height: 100%;
+  padding: 10px;
+  margin: 10px;
+  flex-direction: column;
+  border: 2px solid black;
 }
 
 .choice-wrapper {
   height: 50%;
+      background: #323232;
+
 }
 
+a {
+  text-decoration: none;
+}
+
+.btn{
+width: 186px;
+  height: 40px; 
+  /* border: 2px solid #c2c2c2; */
+  background-color:#2f937f;
 
 
+  cursor: pointer;
 
-a{
-    text-decoration: none;
+}
 
+@media (max-width: 740px) {
+  .nav-bar {
+ max-width: 740px;
+  }
+
+  .main-menu a{
+    height: auto;
+    line-height: 1;
+    padding: 20px 0;
+    width: 60vw;
+    border: none;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  .nav-bar button {
+  margin-left: 5px;
+  margin-left: 5px;
+
+}
+
+.upload {
+  margin-left: 5px;
+  margin-left: 5px;
+}
+
+.download{
+    margin-left: 0;
+    padding-left:0; 
+
+}
+
+.canvas{
+   max-width: 740px;
+
+}
 }
