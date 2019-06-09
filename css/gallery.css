@@ -211,6 +211,9 @@ footer{
 
 }
 
+.item:hover{
+  opacity: 0.8;
+}
 /**** Responsive wizardry ****/
 
 @media(max-width: 1100px){
@@ -227,7 +230,7 @@ footer{
 .item:nth-child(7n){ grid-column-start: 6;}
 
 header ,nav , .search-container ,.contact-container ,footer{
-  width: 1100px;
+  max-width: 1100px;
 }
 }
 
@@ -243,7 +246,7 @@ header ,nav , .search-container ,.contact-container ,footer{
   .item:nth-child(5n){ grid-column-start: 4;}
   header ,nav ,.search-container ,.contact-container,footer{
 
-    width: 850px;
+   max-width: 850px;
   }
 
 }
@@ -258,7 +261,22 @@ header ,nav , .search-container ,.contact-container ,footer{
   .item:nth-child(3n){ grid-column-start: 2;}
 
   header, nav,.search-container ,.contact-container ,footer{
-     width: 720px;
+      max-width: 720px;
   }
 
 }
+
+@media (max-width:540px){
+  .container{
+    grid-template-columns: repeat(4, 100px);
+      width: 410px;
+    }
+
+  header, nav,.search-container ,.contact-container ,footer{
+    width: 500px;
+}
+
+}
+
+
+
