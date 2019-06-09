@@ -190,5 +190,56 @@ a {
     /* max-width: 740px; */
     border: none;
 
+
   }
 }
+
+
+@media (max-width: 550px) {
+   .nav-bar {
+    max-width: 550px;
+  }
+
+.main-menu a {
+    height: auto;
+    line-height: 1;
+    padding: 20px 0;
+    width: 60vw;
+    border: none;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  
+  .nav-bar button {
+    padding: 15px;
+  }
+  .lang {
+    margin-left: 55px;
+  }
+
+  .upload {
+    margin-left: 5px;
+    margin-left: 5px;
+  }
+
+  .download {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+  }
+
+   .canvas {
+    /* max-width: 740px; */
+    border: none;
+
+  }
+
+  }
+
+  
+  
