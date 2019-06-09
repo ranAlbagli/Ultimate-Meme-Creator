@@ -1,6 +1,7 @@
 "use strict"
 
 function onInit() {
+    createKeyWords();
     renderImages();
     renderKeyWords();
 
@@ -13,16 +14,26 @@ function renderImages() {
     var strHtml = '';
     for (var i = 0; i < imgs.length; i++) {
         var img=imgs[i];
-        strHtml+= `<a href="canvas-editor.html" onclick= "onSaveImg(${img.id})" >
-                    <img src="./meme-imgs/${img.id}.jpg" alt=""></a>`
+        strHtml+= `<div class="item">
+                   <div class="hexagon">
+                    <a class="gallery-item" href="canvas-editor.html" onclick= "onSaveImg(${img.id})" >
+                    <img src="./meme-imgs/${img.id}.jpg" alt=""></a>
+                </div>
+                </div>`
     }    
-    var elGallery = document.querySelector('.imgs-container');
+    var elGallery = document.querySelector('.container');
     elGallery.innerHTML = strHtml;
 }
 
 function renderKeyWords(){
     var currKeyWords=getKeyWords();
-    displayWords(currKeyWords)
+    var strHtml=''
+    for (var currKey in currKeyWords) {
+        var currValue = currKeyWords[currKey];
+        var wordSize=currValue*15 +'px';
+        strHtml+=`<li  onclick="onSetFilterByKeyword('${currKey}')"  style="font-size:${wordSize}">${currKey} </li>`
+    }
+    document.querySelector('.key-words-list').innerHTML=strHtml;
 }
 
 
@@ -64,14 +75,9 @@ function onSearch(){
    renderKeyWords();
 }
 
-function displayWords(arr){    
-    var strHtml=''
-    for (var currKey in arr) {
-        var currValue = arr[currKey];
-        var wordSize=currValue*15 +'px';
-        strHtml+=`<li  onclick="onSetFilterByKeyword('${currKey}')"  style="font-size:${wordSize}">${currKey} </li>`
-    }
-    document.querySelector('.key-words-list').innerHTML=strHtml;
-    
-}
 
+function onContact() {
+    var userSubject = document.querySelector('.user-subject').value;
+    var userMsg = document.querySelector('.user-msg').value;
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=albagli.ran@gmail.com&su=${userSubject}&body=${userMsg}`, '_blank')
+}

@@ -4,7 +4,7 @@ var gImgs;
 var gFilterBy; 
 var gCurrImg;
 
-var gKeywords = { 'happy': 3, 'funny': 1 , 'sad':1 , 'smart':1}
+var gKeywords;
 
 var gImgs = [
     { id: 1, keywords: ['sad '] },
@@ -37,7 +37,12 @@ var gImgs = [
 ];
 
 
-
+function createKeyWords(){
+     gKeywords=loadKeyWords();
+     if(!gKeywords){
+        gKeywords = { 'happy': 3, 'funny': 1 , 'sad':1 , 'smart':1}
+     }
+}
 
 function saveImg(imgId){
 
@@ -68,6 +73,7 @@ function getImgsForDisplay() {
 function setNewSearchwWord(word){
     if(!gKeywords[word]) gKeywords[word]=1;
     else gKeywords[word]++;
+    saveKeyWords()
     
 }
 
@@ -75,3 +81,10 @@ function getKeyWords(){
     return gKeywords;
 }
 
+function saveKeyWords(){
+    saveToStorage('keyWords',gKeywords)
+}
+
+function loadKeyWords(){
+    return loadFromStorage('keyWords')
+}

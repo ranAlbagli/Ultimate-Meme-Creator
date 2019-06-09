@@ -1,42 +1,48 @@
+  
+  @font-face {
+    font-family: Lato;
+    src: url('../fonts/lato/Lato-Regular.ttf');
+}
+html {
+  scroll-behavior: smooth;
+}
+  
   body {
              margin: 0;
             height: 100vh;
             width: 100vw;
-            background-color:whitesmoke; 
+            background-color:white; 
   }
 
-.imgs-container{
-    margin: 0 auto; 
-    width: 80%;
-    display: flex; 
-    flex-wrap: wrap;   
-}
-  
   img {
-    border: 1px solid #323232;
     width: 100%;
     height: 100%;
-  }
-  a{
-    margin:10px;
-    width: 20%;
-    border :5px solid #0b0b0b;
-    transition: transform .3s ease-out;
-  }
-
-  a:hover {
-    transform: scale(1.1)
-  
-  }
+    object-fit: cover;
+}
    
   header{
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
-    background-color: #2eb398;
+    background: #323232;
     color: white;
+    font-family: Lato;
+    
+  }
+  .list-item{
+    text-decoration: none;
+    height: 60px;
+    color:#c2c2c2;
+    font-family: Lato;
+    padding: 20px
   }
 
+   .list-item:hover{
+     color:#2f937f
+   }
+  nav{
+    background: #323232
+  }
   
   .words li {
     color: #fff;
@@ -49,4 +55,126 @@
     cursor: pointer;
   }
   
+  .search-container{
+    background-color: #2eb398;
+    color: white;
+
+  }
+
   
+.contact{
+  margin: 0;
+  height: 500px;
+  background-color: #323232;
+}
+
+h4 ,h6 {
+  margin-top :0;
+}
+
+
+form *{
+  background-color: #fd005f
+}
+
+
+  
+
+
+  
+.container{
+  display: grid;
+  grid-template-columns: repeat(10, 100px);
+  grid-column-gap: 5px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 50px;
+  width: 1040px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item{
+  grid-column: span 2;
+  width: 200px;
+  padding: 0 0 231px 0;
+  -o-transform: rotate(-60deg) skewY(30deg);
+  -moz-transform: rotate(-60deg) skewY(30deg);
+  -webkit-transform: rotate(-60deg) skewY(30deg);
+  -ms-transform: rotate(-60deg) skewY(30deg);
+  transform: rotate(-60deg) skewY(30deg);
+  background: #fd005f;
+  overflow: hidden;
+  visibility: hidden;
+  margin-top: -50px;
+}
+
+
+.item:nth-child(9n+1){ grid-column-start: 1;}
+.item:nth-child(9n+2){ grid-column-start: 3;}
+.item:nth-child(9n+3){ grid-column-start: 5;}
+.item:nth-child(9n+4){ grid-column-start: 7;}
+.item:nth-child(9n+5){ grid-column-start: 9;}
+.item:nth-child(9n+6){ grid-column-start: 2;}
+.item:nth-child(9n+7){ grid-column-start: 4;}
+.item:nth-child(9n+8){ grid-column-start: 6;}
+.item:nth-child(9n){ grid-column-start: 8;}
+
+.hexagon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: url("https://picsum.photos/250/250/?image=870"); */
+    -o-transform: skewY(-30deg) rotate(60deg);
+    -moz-transform: skewY(-30deg) rotate(60deg);
+    -webkit-transform: skewY(-30deg) rotate(60deg);
+    -ms-transform: skewY(-30deg) rotate(60deg);
+    transform: skewY(-30deg) rotate(60deg);
+    overflow: hidden;
+  
+}
+    
+.item *{
+    visibility: visible
+}
+
+/**** Responsive wizardry ****/
+
+@media(max-width: 1100px){
+  .container{
+    grid-template-columns: repeat(8, 100px);
+    width: 830px
+  }
+.item:nth-child(7n+1){ grid-column-start: 1;}
+.item:nth-child(7n+2){ grid-column-start: 3;}
+.item:nth-child(7n+3){ grid-column-start: 5;}
+.item:nth-child(7n+4){ grid-column-start: 7;}
+.item:nth-child(7n+5){ grid-column-start: 2;}
+.item:nth-child(7n+6){ grid-column-start: 4;}
+.item:nth-child(7n){ grid-column-start: 6;}
+}
+
+@media(max-width: 850px){
+  .container{
+    grid-template-columns: repeat(6, 100px);
+    width: 620px
+  }
+.item:nth-child(5n+1){ grid-column-start: 1;}
+.item:nth-child(5n+2){ grid-column-start: 3;}
+.item:nth-child(5n+3){ grid-column-start: 5;}
+.item:nth-child(5n+4){ grid-column-start: 2;}
+.item:nth-child(5n){ grid-column-start: 4;}
+}
+
+@media(max-width: 720px){
+  .container{
+  grid-template-columns: repeat(4, 100px);
+    width: 410px;
+  }
+  .item:nth-child(3n+1){ grid-column-start: 1;}
+  .item:nth-child(3n+2){ grid-column-start: 3;}
+  .item:nth-child(3n){ grid-column-start: 2;}
+}
