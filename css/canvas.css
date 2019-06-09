@@ -35,16 +35,44 @@ body.rtl {
 }
 
 .nav-bar button {
-  margin-left: 20px;
-  margin-left: 20px;
+  /* margin-left: 20px;
+  margin-left: 20px; */
     cursor: pointer;
 
+  background-color: black; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /* margin: 4px 2px; */
 
 }
+
+
+
+.nav-bar button:hover {
+	background:linear-gradient(to bottom, #2f937f 5%, #2f937f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccc2a6', endColorstr='#eae0c2',GradientType=0);
+	background-color:#ccc2a6;
+}
+.nav-bar button:active {
+	position:relative;
+	top:1px;
+}  */
+
+
+
+
+
 
 .lang {
   margin-left: 20px;
   margin-left: 20px;
+      cursor: pointer;
+
 }
 
  .upload {
@@ -98,11 +126,13 @@ body.rtl {
 
 a {
   text-decoration: none;
+    color: white;
+
 }
 
 .btn{
-width: 186px;
-  height: 40px; 
+/* width: 186px;
+  height: 40px;  */
   /* border: 2px solid #c2c2c2; */
   background-color:#2f937f;
 
@@ -110,6 +140,15 @@ width: 186px;
   cursor: pointer;
 
 }
+
+
+.moveText{
+  width: 50px;
+}
+
+
+
+
 
 @media (max-width: 740px) {
   .nav-bar {

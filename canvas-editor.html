@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Canvas</title>
-    <script defer src="./fonts/fontawesome-all.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" />
     <link rel="stylesheet" href="css/canvas.css">
     <link rel="stylesheet" href="css/helpers.css">
 </head>
@@ -17,21 +17,21 @@
             <option value="en">English</option>
             <option value="he">עברית</option>
         </select>
-        <button><a href="index.html" data-trans="backToGalleryButton">Gallery</a></button>
 
-    
+        <button><a href="index.html" data-trans="backToGalleryButton">Gallery</a></button>
+                        <button data-trans="clearButton" class="clear" onclick="onClearCanvas()">Clear</button>
 
         <button data-trans="downloadButton" class="download"> <a href="#" class="save" onclick="downloadCanvas(this)"
                 download="">Download</a>
         </button>
-        <button data-trans="clearButton" class="clear" onclick="onClearCanvas()">Clear</button>
+
+
         <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
             <input name="img" id="imgData" type="hidden" />
-            <button type="submit">Publish</button>
+            <button data-trans="publishButton" type="submit">Publish</button>
         </form>
-
-            <input class="upload" type="file" name="image" onchange="onFileInputChange(event)" />
-            <label data-trans="uploadButton" for="file">Choose a file</label>
+        <input class="upload" type="file" name="image" onchange="onFileInputChange(event)" />
+        <label class="upload" data-trans="uploadButton" for="file">Choose a file</label>
     </nav-bar>
 
     <main>
@@ -43,14 +43,14 @@
             </div>
 
             <div class="control-box choice-wrapper flex">
-             
+
             </div>
-         
+
 
 
 
             <div id="fb-root"></div>
-            <div class="share-container"></div>
+            <div class="share-container flex"></div>
         </section>
 
         <script src="js/util-service.js"></script>

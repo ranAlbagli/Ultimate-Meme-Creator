@@ -26,6 +26,17 @@ var gTrans = {
         en: 'Font size',
         he: ' סוג פונט '
     },
+    addLine:
+    {
+        en: 'Add Line',
+        he: ' הוספ/י שורה '
+    },
+    publishButton:
+    {
+        en: 'Publish',
+        he: '  פרסמ/י '
+    },
+
 }
 
 var gCurrLang = 'en';

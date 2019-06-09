@@ -6,7 +6,7 @@ let gCtx;
 
 
 
-function init() {    
+function init() {
     gMeme = createMeme()
     createCanvas()
     console.log(gMeme);
@@ -20,12 +20,13 @@ function renderTxtsEditor() {
         return `
 
                   <p>
-
-
                     <input type="text" data-property="line" placeholder="${txt.line}" oninput="editTxt(this,${idx})">
-                    <i class="fas fa-text-height"></i> <input type="range" value="${txt.size}"  min="10" step="2" data-property="size" oninput="editTxt(this ,${idx})">
+                    <br><br>
+                    <input type="range" value="${txt.size}"  min="10" step="2" data-property="size" oninput="editTxt(this ,${idx})">
                     <input type="color" value="${txt.color}" data-property="color" oninput="editTxt(this,${idx})">
-                    Font: 
+                   </i>
+                    <br> <br>
+                    <i class="fas fa-font"></i>
                     <select data-property="font" oninput="editTxt(this,${idx})">
                     <option value="${txt.font}">${txt.font}</option>
                     <option value="Arial">Arial</option>
@@ -35,27 +36,18 @@ function renderTxtsEditor() {
                      <option value="Tahoma">Tahoma</option>
                     <option value="Geneva">Geneva</option>
                     </select>
-                    <br>
-
+                     <br><br>
                     <p>
-                    <i class="fas fa-arrows-alt-h"></i> <input type="number" value="${txt.x}"  min="0" step="5" data-property="x" oninput="editTxt(this ,${idx})">
-                    <i class="fas fa-arrows-alt-v"></i> <input type="number" value="${txt.y}"  min="0" step="5" data-property="y" oninput="editTxt(this ,${idx})">
-
-                    <select data-property="align" oninput="editTxt(this,${idx})">
-                    <option value="left">left</option>
-                    <option value="center">center</option>
-                    <option value="right">right</option>
-                     </select>
-                    </p>
-
-
-                       <button class="btn"onclick="newTxtBtnClicked()">
-                    <i class="fas fa-plus"></i> Add Line
-                </button>
+                   <input class ="moveText" type="number" value="${txt.x}"  min="0" step="5" data-property="x" oninput="editTxt(this ,${idx})">
+                   <br>
+                    <input class ="moveText" type="number" value="${txt.y}"  min="0" step="5" data-property="y" oninput="editTxt(this ,${idx})">
                     </p>
                     <br>
-
-        
+                       <button  data-trans="addLine" class="btn"onclick="newTxtBtnClicked()">
+                    <i class="fas fa-plus"></i> Add Line
+                       </button>
+                    </p>
+                    <br>
         `
     })
         .join(' ');
@@ -65,7 +57,7 @@ function renderTxtsEditor() {
 }
 
 function editTxt(elinput, txtIdx) {
-    var property = elinput.dataset.property;  // using data-* attributes
+    var property = elinput.dataset.property; 
     var value;
     switch (elinput.type) {
         case 'select-one':
@@ -74,18 +66,16 @@ function editTxt(elinput, txtIdx) {
         case 'checkbox':
             value = elinput.checked;
             break;
-        default: // text, number
+        default:
             value = elinput.value;
             break;
     }
     gMeme.txts[txtIdx][property] = value;
-
-
     createCanvas();
 }
 
 
- function createCanvas(){
+function createCanvas() {
     var imgId = onLoadImg();
     canvas = document.querySelector('#my-canvas');
     gCtx = canvas.getContext("2d");
@@ -97,12 +87,11 @@ function editTxt(elinput, txtIdx) {
         gMeme.txts.forEach(function (txt) {
             drawTxt(txt);
         });
- }
+    }
 }
 
 
 function drawTxt(txt) {
-    
     gCtx.font = txt.size + 'px' + ' ' + txt.font;
     gCtx.textAlign = txt.align;
     gCtx.fillStyle = txt.color;
@@ -119,8 +108,8 @@ function onChangeFont(elementName) {
             break;
         case 'Times New Roman':
             gCtx.font = gTxtSize + 'px ' + ' ' + 'Times New Roman';
-            gCtx.fillText(gTxt, 160, 150);  
-                      break;
+            gCtx.fillText(gTxt, 160, 150);
+            break;
         case 'Helvetica':
             gCtx.font = gTxtSize + 'px ' + ' ' + ' Helvetica';
             gCtx.fillText(gTxt, 160, 150);
@@ -153,15 +142,12 @@ function newTxtBtnClicked() {
 function downloadCanvas(elLink) {
     var data = canvas.toDataURL();
     elLink.href = data;
-
 }
 
 
 
 function onLoadImg() {
     var imgId = loadFromStorage('img')
-    console.log(imgId);
-    
     return imgId
 }
 
