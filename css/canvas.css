@@ -21,10 +21,6 @@ body.rtl {
   padding: 20px;
 }
 
-.canvas {
-  border: 1px solid black;
-}
-
 .nav-bar {
   width: 100vw;
   height: 50px;
@@ -32,10 +28,7 @@ body.rtl {
 }
 
 .nav-bar button {
-  /* margin-left: 20px;
-  margin-left: 20px; */
   cursor: pointer;
-
   background-color: black;
   border: none;
   color: white;
@@ -44,19 +37,19 @@ body.rtl {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  /* margin: 4px 2px; */
 }
 
 .nav-bar button:hover {
   background: linear-gradient(to bottom, #2f937f 5%, #2f937f 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccc2a6', endColorstr='#eae0c2',GradientType=0);
   background-color: #ccc2a6;
+  cursor: pointer;
 }
 .nav-bar button:active {
   position: relative;
   top: 1px;
+  cursor: pointer;
 }
-
 
 select {
   width: 100%;
@@ -64,12 +57,13 @@ select {
   border: none;
   border-radius: 4px;
   background-color: #f1f1f1;
+  cursor: pointer;
 }
 .lang {
   margin-left: 20px;
   margin-left: 20px;
   cursor: pointer;
-   width: 120px;
+  width: 120px;
   padding: 6px 20px;
   border: none;
   border-radius: 4px;
@@ -80,51 +74,32 @@ select {
   margin-left: 20px;
   margin-left: 20px;
   cursor: pointer;
-
-
 }
 
-/* .upload {
-  margin-left: 20px;
-  margin-left: 20px;
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-} */
-
-/* 
-
- .upload + label {
-    font-size: 1.25em;
-    font-weight: 700;
-    color: white;
-    background-color: black;
-    display: inline-block;
-} */
-
-/* .upload + label {
-	cursor: pointer; 
-}  */
-
 .control-box {
-  /* width: 100px; */
   height: 100%;
   padding: 10px;
   margin: 10px;
   flex-direction: column;
+  border-radius: 15px;
   border: 2px solid black;
+    cursor: pointer;
 
 }
 
 .choice-wrapper {
   height: 50%;
   background: #323232;
-
 }
 
+input[type=text] {
+  width: 100%;
+  padding: 6px 20px;
+  margin: 6px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 6px solid #2f937f ;
+}
 
 nav-bar a {
   text-decoration: none;
@@ -132,11 +107,7 @@ nav-bar a {
 }
 
 .btn {
-  /* width: 186px;
-  height: 40px;  */
-  /* border: 2px solid #c2c2c2; */
   background-color: #2f937f;
-
   cursor: pointer;
 }
 
@@ -189,18 +160,15 @@ nav-bar a {
   .canvas {
     /* max-width: 740px; */
     border: none;
-
-
   }
 }
 
-
 @media (max-width: 550px) {
-   .nav-bar {
+  .nav-bar {
     max-width: 550px;
   }
 
-.main-menu a {
+  .main-menu a {
     height: auto;
     line-height: 1;
     padding: 20px 0;
@@ -209,7 +177,6 @@ nav-bar a {
     border-bottom: 1px solid #1e1e1e;
   }
 
-  
   .nav-bar button {
     padding: 15px;
   }
@@ -232,19 +199,7 @@ nav-bar a {
     flex-direction: column;
     margin: 5px 0;
   }
-
-   .canvas {
-    /* max-width: 740px; */
-    border: none;
-
+  .canvas{
+   max-width: 300px;
   }
-
-  }
-
-  
- 
-
-
-
-
-
+}
