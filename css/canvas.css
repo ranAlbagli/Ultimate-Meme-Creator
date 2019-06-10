@@ -111,6 +111,8 @@ nav-bar a {
 .btn {
   background-color: #2f937f;
   cursor: pointer;
+  border-radius: 10px;
+
 }
 
 .moveText {
