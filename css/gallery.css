@@ -267,7 +267,7 @@ header ,nav , .search-container ,.contact-container ,footer{
 @media (max-width:540px){
   .container{
     grid-template-columns: repeat(4, 100px);
-    width: 410px;
+    width: 503px;
 
   }
   .item:nth-child(3n+1){ grid-column-start: 1;}
@@ -276,7 +276,7 @@ header ,nav , .search-container ,.contact-container ,footer{
 
   head-page, .search-container ,.contact-container ,footer{
     /* min-width: 100vw; */
-    width: 386px;
+    /* width: 650px; */
 }
 
 }
@@ -339,7 +339,7 @@ header ,nav , .search-container ,.contact-container ,footer{
   display: flex;
   justify-content: center;
   position: absolute;
-  right: 0;
+  left: 0;
 }
 
 .header .menu-icon .navicon {
