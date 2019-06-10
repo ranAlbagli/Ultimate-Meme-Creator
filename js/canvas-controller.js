@@ -1,6 +1,7 @@
+'use strict'
 
-let canvas;
-let gCtx;
+ let canvas;
+ let gCtx;
 
 function init() {
     createCanvas()

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +9,14 @@
     <link rel="stylesheet" href="css/canvas.css">
     <link rel="stylesheet" href="css/helpers.css">
 </head>
-
 <body onload="init()">
     <nav-bar class="nav-bar flex align-both ">
         <select class="lang" onchange="onSetLang(this.value)">
             <option value="en">English</option>
             <option value="he">עברית</option>
         </select>
-
         <button><a href="index.html" data-trans="backToGalleryButton">Gallery</a></button>
         <button data-trans="clearButton" class="clear" onclick="clearCanvas()">Clear</button>
-
         <button data-trans="downloadButton" class="download"> <a href="#" class="save" onclick="downloadCanvas(this)"
                 download="">Download</a>
         </button>
@@ -35,7 +31,6 @@
          
 
     </nav-bar>
-
     <main>
         <section class="container main-wrapper space-between flex">
             <div class="canvas flex">
@@ -43,11 +38,8 @@
                     Update your browser to enjoy canvas!
                 </canvas>
             </div>
-
             <div class="control-box choice-wrapper flex">
-
             </div>
-
             <div id="fb-root"></div>
             <div class="share-container flex"></div>
         </section>
@@ -60,5 +52,4 @@
         <script src="js/canvas-controller.js"></script>
         <script src="js/canvas-service.js"></script>
 </body>
-
 </html>

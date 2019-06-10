@@ -31,7 +31,7 @@ function renderKeyWords(){
     for (var currKey in currKeyWords) {
         var currValue = currKeyWords[currKey];
         var wordSize=currValue*15 +'px';
-        strHtml+=`<li  onclick="onSetFilterByKeyword('${currKey}')"  style="font-size:${wordSize}">${currKey} </li>`
+        strHtml+=`<li  onclick="onSetFilterByKeyword('${currKey}')" style="font-size:${wordSize}">${currKey} </li>`
     }
     document.querySelector('.key-words-list').innerHTML=strHtml;
 }
@@ -74,6 +74,12 @@ function onSearch(){
    document.querySelector('input[type="text"]').value=''  
    renderKeyWords();
 }
+function onSearch(){
+    var elWord= document.querySelector('input[type="text"]').value
+    setNewSearchwWord(elWord)
+    document.querySelector('input[type="text"]').value=''  
+    renderKeyWords();
+ }
 
 
 function onContact() {
