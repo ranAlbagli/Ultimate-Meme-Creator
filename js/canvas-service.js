@@ -2,6 +2,7 @@
 
 let gMeme;
 let gColor;
+let gUpload;
 
 function createMeme() {
    return {
@@ -52,12 +53,10 @@ function handleImageFromInput(ev, onImageReady) {
          gMeme.txts.forEach(function (txt) {
             drawTxt(txt);
          });
-
       }
    }
    reader.readAsDataURL(ev.target.files[0]);
 }
-
 
 
 
