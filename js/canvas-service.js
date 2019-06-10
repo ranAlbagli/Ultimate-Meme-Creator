@@ -2,7 +2,6 @@
 
 let gMeme;
 let gColor;
-// let currentElement = null;
 
 function createMeme() {
    return {
