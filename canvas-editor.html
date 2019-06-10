@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="css/canvas.css">
     <link rel="stylesheet" href="css/helpers.css">
 </head>
+
 <body onload="init()">
     <nav-bar class="nav-bar flex align-both ">
         <select class="lang" onchange="onSetLang(this.value)">
@@ -24,17 +26,13 @@
             <input name="img" id="imgData" type="hidden" />
             <button data-trans="publishButton" type="submit">Publish</button>
         </form>
-        <!-- <input class="upload" type="file" name="image" onchange="onFileInputChange(event)" />
-        <label data-trans="uploadButton" for="file">Choose a file</label> -->
-    
-        <input type="file" class="custom-file-input" onchange="onFileInputChange(event)"/>
-         
+        <input type="file" class="custom-file-input" onchange="onFileInputChange(event)" />
 
     </nav-bar>
     <main>
         <section class="container main-wrapper space-between flex">
             <div class="canvas flex">
-                <canvas class= "theCanvas" id="my-canvas" width="600" height="600">
+                <canvas class="theCanvas" id="my-canvas" width="600" height="600">
                     Update your browser to enjoy canvas!
                 </canvas>
             </div>
@@ -52,4 +50,5 @@
         <script src="js/canvas-controller.js"></script>
         <script src="js/canvas-service.js"></script>
 </body>
+
 </html>

@@ -1,14 +1,12 @@
 'use strict'
 
- let canvas;
- let gCtx;
+let canvas;
+let gCtx;
 
 function init() {
     createCanvas()
     gMeme = createMeme()
     renderTxtsEditor()
-
-   
 }
 
 function renderTxtsEditor() {
@@ -55,13 +53,12 @@ function renderTxtsEditor() {
         .join(' ');
 
     document.querySelector('.choice-wrapper').innerHTML = strHtml;
-
 }
 
 
 
 function editTxt(elinput, txtIdx) {
-    var property = elinput.dataset.property; 
+    var property = elinput.dataset.property;
     var value;
     switch (elinput.type) {
         case 'select':
@@ -84,18 +81,10 @@ function createCanvas() {
     gCtx = canvas.getContext("2d");
     var img = new Image()
     img.src = `meme-imgs/${imgId}.jpg`
-
-   
- 
-  
-
     img.onload = function () {
-    
-        gCtx.drawImage(img,0 ,0, canvas.height, canvas.width);
+        gCtx.drawImage(img, 0, 0, canvas.height, canvas.width);
         gMeme.txts.forEach(function (txt) {
-            
             drawTxt(txt);
-            // getAlign(txt)
         });
     }
 }
@@ -106,23 +95,8 @@ function drawTxt(txt) {
     gCtx.textAlign = txt.align;
     gCtx.fillStyle = txt.color;
     gCtx.fillText(txt.line, txt.x, txt.y);
-  
+
 }
-
-// function getAlign(txt){
-
-//     if (txt.align) {
-//         gCtx.fillText(txt.line, 150, 100);
-//     }
-//     if (txt.alignRight) {
-//         gCtx.fillText(txt.line, 150, 140);
-//     }
-//     if (txt.alignCenter) {
-//         gCtx.fillText(txt.line, 150, 120);
-//     }
-
-// }
-
 
 
 function newTxtBtnClicked() {
@@ -130,8 +104,6 @@ function newTxtBtnClicked() {
     renderTxtsEditor();
     createCanvas()
 }
-
-
 
 
 function downloadCanvas(elLink) {
@@ -148,8 +120,6 @@ function onLoadImg() {
 
 function onClearCanvas() {
     clearCanvas();
-    
-
 }
 
 function onSetLang(lang) {
@@ -166,7 +136,7 @@ function onSetLang(lang) {
 function renderCanvas(img) {
     canvas.width = img.width;
     canvas.height = img.height;
-    ctx.drawImage(img, 0, 0);
+    gCtx.drawImage(img, 0, 0);
 }
 
 
