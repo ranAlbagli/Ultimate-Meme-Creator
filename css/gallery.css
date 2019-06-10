@@ -339,7 +339,7 @@ header ,nav , .search-container ,.contact-container ,footer{
   display: flex;
   justify-content: center;
   position: absolute;
-  right: 0;
+  left: 0;
 }
 
 .header .menu-icon .navicon {
