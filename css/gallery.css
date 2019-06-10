@@ -276,6 +276,7 @@ header ,nav , .search-container ,.contact-container ,footer{
 
   head-page, .search-container ,.contact-container ,footer{
     /* min-width: 100vw; */
+    width: 386px;
 }
 
 }
@@ -292,6 +293,8 @@ header ,nav , .search-container ,.contact-container ,footer{
   position: fixed;
   width: 100%;
   z-index: 3;
+  display: flex;
+  justify-content: center;
 }
 
 .header ul {
@@ -328,11 +331,15 @@ header ,nav , .search-container ,.contact-container ,footer{
 .header .menu-icon {
   
   cursor: pointer;
-  display: inline-block;
-  float: right;
+  /* display: inline-block; */
+  /* float: right; */
   padding: 28px 20px;
-  position: relative;
+  /* position: relative; */
   user-select: none;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 0;
 }
 
 .header .menu-icon .navicon {
