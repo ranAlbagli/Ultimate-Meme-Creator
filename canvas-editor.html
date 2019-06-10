@@ -19,20 +19,17 @@
         </select>
 
         <button><a href="index.html" data-trans="backToGalleryButton">Gallery</a></button>
-                        <button data-trans="clearButton" class="clear" onclick="onClearCanvas()">Clear</button>
+        <button data-trans="clearButton" class="clear" onclick="onClearCanvas()">Clear</button>
 
         <button data-trans="downloadButton" class="download"> <a href="#" class="save" onclick="downloadCanvas(this)"
                 download="">Download</a>
         </button>
-
-
         <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
             <input name="img" id="imgData" type="hidden" />
             <button data-trans="publishButton" type="submit">Publish</button>
         </form>
-
-            <input class="upload" type="file" name="image" onchange="onFileInputChange(event)"  />
-            <label data-trans="uploadButton" for="file">Choose a file</label>
+        <input class="upload" type="file" name="image" onchange="onFileInputChange(event)" />
+        <label data-trans="uploadButton" for="file">Choose a file</label>
     </nav-bar>
 
     <main>
@@ -46,9 +43,6 @@
             <div class="control-box choice-wrapper flex">
 
             </div>
-
-
-
 
             <div id="fb-root"></div>
             <div class="share-container flex"></div>

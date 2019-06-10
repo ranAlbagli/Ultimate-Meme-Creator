@@ -49,15 +49,14 @@ function renderTxtsEditor() {
 
 }
 
+
+
 function editTxt(elinput, txtIdx) {
     var property = elinput.dataset.property; 
     var value;
     switch (elinput.type) {
-        case 'select-one':
+        case 'select':
             value = elinput.options[elinput.selectedIndex].value;
-            break;
-        case 'checkbox':
-            value = elinput.checked;
             break;
         default:
             value = elinput.value;
@@ -74,9 +73,9 @@ function createCanvas() {
     gCtx = canvas.getContext("2d");
     var img = new Image()
     img.src = `meme-imgs/${imgId}.jpg`
+      
     img.onload = function () {
         gCtx.drawImage(img, 0, 0, canvas.height, canvas.width);
-
         gMeme.txts.forEach(function (txt) {
             drawTxt(txt);
         });
@@ -92,41 +91,13 @@ function drawTxt(txt) {
 }
 
 
-function onChangeFont(elementName) {
-    currentElement = elementName;
-    switch (currentElement) {
-        case 'Arial':
-            ctx.font = gTxtSize + 'px ' + ' ' + ' Arial';
-            ctx.fillText(gTxt, 160, 150);
-            break;
-        case 'Times New Roman':
-            gCtx.font = gTxtSize + 'px ' + ' ' + 'Times New Roman';
-            gCtx.fillText(gTxt, 160, 150);
-            break;
-        case 'Helvetica':
-            ctx.font = gTxtSize + 'px ' + ' ' + ' Helvetica';
-            ctx.fillText(gTxt, 160, 150);
-            break;
-        case 'Verdana':
-            ctx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
-            ctx.fillText(gTxt, 160, 150);
-            break;
-        case 'Tahoma':
-            ctx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
-            ctx.fillText(gTxt, 160, 150);
-            break;
-        case 'Geneva':
-            ctx.font = gTxtSize + 'px ' + ' ' + ' Verdana';
-            ctx.fillText(gTxt, 160, 150);
-            break;
-    }
-}
+
 
 
 function newTxtBtnClicked() {
     gMeme.txts.push(createTxt('New Line', 150, 150));
-    createCanvas()
     renderTxtsEditor();
+    createCanvas()
 }
 
 
@@ -146,6 +117,7 @@ function onLoadImg() {
 
 function onClearCanvas() {
     clearCanvas();
+
 }
 
 function onSetLang(lang) {

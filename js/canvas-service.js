@@ -6,7 +6,7 @@ let currentElement = null;
 
 function createMeme() {
    return {
-      selectedImgId: 1,
+      selectedImgId:  1,
       txts: [
          createTxt('Enter Text here', 150, 70), createTxt('Enter Text here', 150, 300)]
    };
@@ -27,23 +27,15 @@ function createTxt(line, x, y) {
    }
 }
 
-function changeColor(color) {
-   gColor = color;
-}
 
-function getMeme() {
-   return gMeme;
-}
-
-
-   function getCanvas(){
-      return gCanvas;
-   }
 
 function clearCanvas() {
-   createCanvas()
-}
+console.log('here');
 
+ 
+   createCanvas()
+
+}
 
 //UPLOAD IMG WITH INPUT FILE
 function handleImageFromInput(ev, onImageReady) {
@@ -54,6 +46,14 @@ function handleImageFromInput(ev, onImageReady) {
       var img = new Image();
       img.onload = onImageReady.bind(null, img)
       img.src = event.target.result;
+
+      img.onload = function () {     
+         gCtx.drawImage(img, 0, 0, canvas.height, canvas.width);
+         gMeme.txts.forEach(function (txt) {
+            drawTxt(txt);
+         });
+
+      }
    }
    reader.readAsDataURL(ev.target.files[0]);
 }
