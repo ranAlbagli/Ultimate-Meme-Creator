@@ -1,4 +1,8 @@
-  
+*{
+  box-sizing: border-box
+}
+
+
   @font-face {
     font-family: Lato;
     src: url('../fonts/lato/Lato-Regular.ttf');
@@ -16,8 +20,9 @@ html {
   
   body {
              margin: 0;
-            height: 100vh;
-            width: 100vw;
+            /* height: 100vh; */
+            /* width: 100vw; */
+            width: 100%;
             background-color:white; 
   }
 
@@ -27,26 +32,18 @@ html {
     object-fit: cover;
 }
    
-  header{
+  .head-page{
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
     padding-bottom: 50px;
     background: #323232;
     color: white;
     font-family: Lato;
+    height: 190px;
     
   }
-  .list-item{
-    text-decoration: none;
-    height: 60px;
-    color:#c2c2c2;
-    font-family: Lato;
-    padding: 20px
-  }
-
-   .list-item:hover{
-     color:#2f937f
-   }
+  
   nav{
     background: #323232
   }
@@ -146,7 +143,7 @@ form {
   max-width:420px; 
   margin:0 auto; 
   font-family: Maven-pro;
-  padding-top: 50px; 
+  padding: 50px 20px; 
 }
 
 .feedback-input {
@@ -244,9 +241,9 @@ header ,nav , .search-container ,.contact-container ,footer{
   .item:nth-child(5n+3){ grid-column-start: 5;}
   .item:nth-child(5n+4){ grid-column-start: 2;}
   .item:nth-child(5n){ grid-column-start: 4;}
-  header ,nav ,.search-container ,.contact-container,footer{
+  .head-page ,.search-container ,.contact-container,footer{
 
-   max-width: 850px;
+   /* min-width: 100vw; */
   }
 
 }
@@ -255,28 +252,159 @@ header ,nav , .search-container ,.contact-container ,footer{
   .container{
   grid-template-columns: repeat(4, 100px);
     width: 410px;
+
   }
   .item:nth-child(3n+1){ grid-column-start: 1;}
   .item:nth-child(3n+2){ grid-column-start: 3;}
   .item:nth-child(3n){ grid-column-start: 2;}
 
-  header, nav,.search-container ,.contact-container ,footer{
-      max-width: 720px;
+  .head-page, .search-container ,.contact-container ,footer{
+      /* min-width: 100vw; */
   }
-
+ 
 }
 
 @media (max-width:540px){
   .container{
     grid-template-columns: repeat(4, 100px);
-      width: 410px;
-    }
+    width: 410px;
 
-  header, nav,.search-container ,.contact-container ,footer{
-    width: 500px;
+  }
+  .item:nth-child(3n+1){ grid-column-start: 1;}
+  .item:nth-child(3n+2){ grid-column-start: 3;}
+  .item:nth-child(3n){ grid-column-start: 2;}
+
+  head-page, .search-container ,.contact-container ,footer{
+    /* min-width: 100vw; */
 }
 
 }
 
 
 
+/* ---------------------------------------------------------------------------------------- */
+
+
+.header {
+  background-color: #323232;
+  color: white;
+  font-family: Lato;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #323232;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  color:white;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  color: #2eb398;
+}
+
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: white;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: white;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 565px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}

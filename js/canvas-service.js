@@ -36,11 +36,6 @@ function clearCanvas() {
    renderTxtsEditor();
    createCanvas();
 
-   
-
-function clearCanvas() {
-    createCanvas()
-   
 }
 
 //UPLOAD IMG WITH INPUT FILE
