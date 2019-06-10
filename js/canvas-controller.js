@@ -79,9 +79,11 @@ function createCanvas() {
     gCtx = canvas.getContext("2d");
     var img = new Image()
     img.src = `meme-imgs/${imgId}.jpg`
+
+   
       
     img.onload = function () {
-        gCtx.drawImage(img, 0, 0, canvas.height, canvas.width);
+        gCtx.drawImage(img, 0, 0, canvas.width, canvas.height);
         gMeme.txts.forEach(function (txt) {
             drawTxt(txt);
         });
