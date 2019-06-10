@@ -81,12 +81,24 @@ select {
   padding: 10px;
   margin: 10px;
   flex-direction: column;
+  border-radius: 15px;
   border: 2px solid black;
+    cursor: pointer;
+
 }
 
 .choice-wrapper {
   height: 50%;
   background: #323232;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 6px 20px;
+  margin: 6px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 6px solid #2f937f ;
 }
 
 nav-bar a {
