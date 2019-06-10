@@ -28,14 +28,18 @@
             <input name="img" id="imgData" type="hidden" />
             <button data-trans="publishButton" type="submit">Publish</button>
         </form>
-        <input class="upload" type="file" name="image" onchange="onFileInputChange(event)" />
-        <label data-trans="uploadButton" for="file">Choose a file</label>
+        <!-- <input class="upload" type="file" name="image" onchange="onFileInputChange(event)" />
+        <label data-trans="uploadButton" for="file">Choose a file</label> -->
+    
+        <input type="file" class="custom-file-input" onchange="onFileInputChange(event)"/>
+
+
     </nav-bar>
 
     <main>
         <section class="container main-wrapper space-between flex">
             <div class="canvas flex">
-                <canvas id="my-canvas" width="600" height="600">
+                <canvas class= "theCanvas" id="my-canvas" width="600" height="600">
                     Update your browser to enjoy canvas!
                 </canvas>
             </div>
@@ -48,7 +52,6 @@
             <div class="share-container flex"></div>
         </section>
 
-                <script src="js/add.js"></script>
 
         <script src="js/util-service.js"></script>
         <script src="js/i18n-service.js"></script>

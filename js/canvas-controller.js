@@ -6,6 +6,8 @@ function init() {
     createCanvas()
     gMeme = createMeme()
     renderTxtsEditor()
+
+   
 }
 
 function renderTxtsEditor() {
@@ -37,9 +39,9 @@ function renderTxtsEditor() {
                     </p>
                    <br>
                       <select data-property="align" oninput="editTxt(this,${idx})">
-                    <option value="left">right</option>
-                    <option value="${txt.alignCenter}">center</option>
-                    <option value="${txt.alignRight}">left</option>
+                      <option value="${txt.alignLeft}">right</option>
+                      <option value="${txt.alignRight}">left</option>
+                      <option value="${txt.alignCenter}">center</option>
                      </select>
                     <br>
                        <button  data-trans="addLine" class="btn"onclick="newTxtBtnClicked()">
@@ -73,6 +75,8 @@ function editTxt(elinput, txtIdx) {
 }
 
 
+
+
 function createCanvas() {
     var imgId = onLoadImg();
     canvas = document.querySelector('#my-canvas');
@@ -81,11 +85,16 @@ function createCanvas() {
     img.src = `meme-imgs/${imgId}.jpg`
 
    
-      
+ 
+  
+
     img.onload = function () {
-        gCtx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    
+        gCtx.drawImage(img,0 ,0, canvas.height, canvas.width);
         gMeme.txts.forEach(function (txt) {
+            
             drawTxt(txt);
+            // getAlign(txt)
         });
     }
 }
@@ -96,9 +105,22 @@ function drawTxt(txt) {
     gCtx.textAlign = txt.align;
     gCtx.fillStyle = txt.color;
     gCtx.fillText(txt.line, txt.x, txt.y);
+  
 }
 
+// function getAlign(txt){
 
+//     if (txt.align) {
+//         gCtx.fillText(txt.line, 150, 100);
+//     }
+//     if (txt.alignRight) {
+//         gCtx.fillText(txt.line, 150, 140);
+//     }
+//     if (txt.alignCenter) {
+//         gCtx.fillText(txt.line, 150, 120);
+//     }
+
+// }
 
 
 
@@ -125,6 +147,7 @@ function onLoadImg() {
 
 function onClearCanvas() {
     clearCanvas();
+    
 
 }
 
