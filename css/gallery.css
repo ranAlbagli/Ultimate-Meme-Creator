@@ -246,6 +246,7 @@ header ,nav , .search-container ,.contact-container ,footer{
    /* min-width: 100vw; */
    width: 100%;
   }
+  
 
 }
 
@@ -281,7 +282,9 @@ header ,nav , .search-container ,.contact-container ,footer{
     /* width: 650px; */
     width: 100%;
 }
-
+html{
+  width: 510px
+}
 }
 
 
