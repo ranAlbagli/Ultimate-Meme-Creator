@@ -3,8 +3,8 @@ let canvas;
 let gCtx;
 
 function init() {
-    gMeme = createMeme()
     createCanvas()
+    gMeme = createMeme()
     renderTxtsEditor()
 }
 
@@ -35,6 +35,12 @@ function renderTxtsEditor() {
                    <br>
                     <input class ="moveText" type="number" value="${txt.y}"  min="0" step="5" data-property="y" oninput="editTxt(this ,${idx})">
                     </p>
+                   <br>
+                      <select data-property="align" oninput="editTxt(this,${idx})">
+                    <option value="left">right</option>
+                    <option value="${txt.alignCenter}">center</option>
+                    <option value="${txt.alignRight}">left</option>
+                     </select>
                     <br>
                        <button  data-trans="addLine" class="btn"onclick="newTxtBtnClicked()">
                     <i class="fas fa-plus"></i> Add Line

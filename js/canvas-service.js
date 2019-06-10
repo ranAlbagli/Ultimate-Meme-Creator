@@ -2,15 +2,14 @@
 
 let gMeme;
 let gColor;
-let currentElement = null;
+// let currentElement = null;
 
 function createMeme() {
    return {
-      selectedImgId:  1,
+      // selectedImgId:  1,
       txts: [
-         createTxt('Enter Text here', 150, 70), createTxt('Enter Text here', 150, 300)]
-   };
-   
+         createTxt('Enter Text here', 300, 70), createTxt('Enter Text here', 300, 300)]
+   };  
 }
 
 
@@ -23,17 +22,21 @@ function createTxt(line, x, y) {
       font: 'impact',
       strokeStyle: '#ffffff',
       x: x,
-      y: y
+      y: y,
+      alignCenter: 'center',
+      alignRight: 'right'
    }
 }
 
 
 
 function clearCanvas() {
-console.log('here');
+   gMeme.txts[0].line = '';
+   gMeme.txts[1].line = '';
+   renderTxtsEditor();
+   createCanvas();
 
- 
-   createCanvas()
+   
 
 }
 
