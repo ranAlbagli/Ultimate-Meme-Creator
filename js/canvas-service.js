@@ -41,7 +41,8 @@ function getMeme() {
    }
 
 function clearCanvas() {
-   createCanvas()
+    createCanvas()
+   
 }
 
 
